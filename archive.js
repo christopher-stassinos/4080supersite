@@ -59,6 +59,7 @@
       a.href = destination; a.target = '_blank'; a.rel = 'noopener';
       a.title = 'Browse 4080Super on ' + (destination === depop ? 'Depop' : 'eBay');
       a.className = 'net-banner brand-banner brand-' + entry[2];
+      if (i < (destination === depop ? 4 : 2)) a.classList.add('mobile-feature');
       a.setAttribute('aria-label', entry[0] + ' / 4080Super on ' + (destination === depop ? 'Depop' : 'eBay'));
       if(entry[3]) {
         const logo = document.createElement('img');

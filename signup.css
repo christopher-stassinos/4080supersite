@@ -31,3 +31,17 @@ html:has(.signup-dialog[open]) .star-cursor{visibility:hidden}
 .signup-submit:active:not(:disabled){border-style:inset}
 .signup-status{min-height:28px;margin-bottom:10px}
 .signup-close{width:23px;height:23px}
+@media(max-width:540px){
+  .signup-dialog{width:310px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 40px)}
+  .signup-top{font-size:9px}
+  .signup-close{width:32px;height:32px}
+  .signup-content{padding:14px}
+  .signup-stamp{font-size:8px}
+  .signup-content h2{font-size:21px;line-height:1.12;margin:11px 0 8px}
+  .signup-content>p{font-size:11px;line-height:1.4;margin-bottom:10px;padding-bottom:9px}
+  #signup-email{font-size:16px;padding:8px;min-height:40px}
+  .signup-consent{margin:10px 0;font-size:10px;line-height:1.4}
+  .signup-submit{min-height:40px}
+  .signup-status{min-height:0;margin:7px 0;font-size:10px}
+  .signup-later{min-height:32px}
+}

@@ -1,4 +1,23 @@
 /* Compact marketplace rails; override the original embedded stylesheet. */
+@media(max-width:540px){
+  html body .network-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  html body .network-list > :not(.mobile-feature){display:none}
+  html body .network-list > .mobile-feature{height:84px;min-height:0;box-sizing:border-box;aspect-ratio:auto;padding:6px;border:1px solid #888;box-shadow:none}
+  html body .network-list > .mobile-feature strong{font-size:17px;line-height:1.1}
+  html body .network-list > .mobile-feature .brand-logo{max-height:40px}
+  html body .network-list .brand-destination{display:none}
+  html body .rail-heading button{display:none}
+  html body .network-list .fade{opacity:1}
+}
+@media(max-width:540px){
+  html body .site-header{justify-content:center;gap:12px;padding:16px 12px 12px}
+  html body .brand{justify-content:center;width:100%}
+  html body .searchwrap{flex:1 1 100%;max-width:none}
+  html body .searchwrap input{min-width:0;font-size:16px}
+  html body .searchwrap button{color:#111;background:#eee}
+  html body .main .tagline{font-size:12px;line-height:1.5;margin-bottom:14px}
+  html body .shop-title{font-size:19px}
+}
 html body .layout{display:grid;grid-template-columns:174px minmax(0,1fr) 184px;width:100%;max-width:1180px;gap:20px}
 html body .layout[hidden]{display:none}
 html body .sidebar,html body .newsbox{min-width:0}
@@ -174,6 +193,15 @@ html body .artifact-player.dj-compact{width:108px;padding:4px;align-items:center
 @media(prefers-reduced-motion:reduce){.is-playing .dj-avatar{animation:none}}
 html body .artifact-player{width:320px;max-width:calc(100vw - 24px);background:#eee;border:1px solid #888;padding:8px;filter:none;box-shadow:2px 2px #aaa}
 .player-volume{width:110px;min-width:0;accent-color:#245b2b;margin:0 4px}
+@media(max-width:540px){
+  html body .artifact-player{right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));width:252px;max-width:calc(100vw - 16px);gap:3px;padding:5px;box-sizing:border-box}
+  html body .artifact-player .player-btn{width:34px;height:34px;padding:5px}
+  html body .artifact-player .player-volume{width:72px;height:30px;margin:0 2px}
+  html body .artifact-player .player-meta{padding:4px 2px;border:0;background:none;box-shadow:none;min-width:0}
+  html body .artifact-player .player-track{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  html body .artifact-player .player-sub{display:none}
+  html:has(.signup-dialog[open]) .artifact-player{visibility:hidden}
+}
 .net-banner.brand-palmangels{background:#080808;color:#fff}
 @font-face{font-family:ArchiveBlackletter;src:url('images/brands/blackletter.ttf') format('truetype');font-weight:700;font-display:swap}
 .brand-palmangels strong{font:700 25px ArchiveBlackletter,serif;line-height:1.1;display:flex;white-space:nowrap;padding-bottom:16px}
