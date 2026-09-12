@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 170" shape-rendering="crispEdges">
+ <g stroke="#171717" stroke-width="4" stroke-linejoin="miter">
+  <path fill="#333" d="M62 70H118L132 112H48Z"/>
+  <path fill="#303033" d="M46 74L53 35L69 17L89 10L110 18L127 38L133 75L112 84H66Z"/>
+  <path fill="#090909" d="M62 53L90 43L118 55L109 72L96 80H81L68 70Z"/>
+  <path fill="#3c3c3f" d="M53 43L69 21L89 14L110 23L126 47L119 61L101 54L82 52L61 60Z"/>
+  <path stroke="#505053" stroke-width="2" d="M61 43L73 28L88 22M108 29L119 46"/>
+  <path stroke="#202022" stroke-width="3" d="M62 59L82 51L101 53L119 61"/>
+  <path stroke="#92928b" stroke-width="2" d="M72 78L74 96M108 79L105 96"/>
+  <path fill="#333" d="M59 80L41 98L52 111L74 94M121 80L140 98L127 113L106 94"/>
+  <path fill="#bb9278" d="M45 100H58L63 105L60 112H43ZM122 100H135L139 106L136 112H120Z"/>
+  <path stroke="#242426" stroke-width="2" d="M78 99L73 108H108L102 99M56 93L64 98M119 94L126 98"/>
+  <path fill="#999" d="M21 112H159L173 149H7Z"/>
+  <path fill="#333" d="M7 149H173V160H7Z"/>
+  <path stroke="#8aff64" stroke-width="2" d="M15 155H25M29 155H35M143 155H165"/>
+  <ellipse cx="47" cy="132" rx="23" ry="12" fill="#222"/>
+  <ellipse cx="132" cy="132" rx="23" ry="12" fill="#222"/>
+  <path fill="#ef5b64" d="M42 129H53V135H42Z"/>
+  <path fill="#8bedba" d="M127 129H138V135H127Z"/>
+  <path stroke="#222" d="M81 119V143M90 119V143M99 119V143"/>
+  <path stroke="#fff" d="M77 125H85M86 136H94M95 128H103"/>
+ </g>
+</svg>

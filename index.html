@@ -1,4 +1,12 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
 <title>4080Super</title>
+<link rel="stylesheet" href="archive.css?v=shop-alert-catalog">
+<script src="tech.js"></script>
+<script src="catalog.js"></script>
+<script src="music.js?v=playlist-only-volume" defer></script>
+<script src="archive.js?v=shop-alert-catalog" defer></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root{
@@ -58,7 +66,33 @@
     flex-wrap: wrap;
   }
   .brand{ display: flex; align-items: center; gap: 8px; }
-  .brand svg{ width: 26px; height: 26px; color: var(--ink); flex: none; }
+  .brand-mark{
+    width: 28px;
+    height: 28px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    position: relative;
+    font-family: "Arial Black", Impact, Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    line-height: 1;
+    font-style: italic;
+    color: var(--ink);
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 var(--accent);
+    transform: skew(-7deg);
+  }
+  .brand-mark::before,
+  .brand-mark::after{
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 0;
+    height: 1px;
+    background: var(--ink);
+    transform: skewX(-18deg);
+  }
+  .brand-mark::before{ top: 6px; }
+  .brand-mark::after{ bottom: 5px; }
   .brand-text{ line-height: 1.15; }
   .brand-text .name{ font-size: 19px; font-weight: bold; color: var(--ink); }
   .brand-text .sub{ font-size: 10.5px; color: var(--ink-soft); font-style: italic; }
@@ -432,24 +466,23 @@
 
 <div class="site-header">
   <div class="brand">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L14.9 9.1L24 12L14.9 14.9L12 24L9.1 14.9L0 12L9.1 9.1Z"/></svg>
+    <div class="brand-mark" aria-label="4080Super logo">4</div>
     <div class="brand-text">
       <div class="name">4080SUPER</div>
-      <div class="sub">streetwear &middot; tech &middot; rare archive</div>
+      <div class="sub">tech &middot; rare archive</div>
     </div>
   </div>
 
   <div class="searchwrap">
     <span class="lbl">Browse:</span>
-    <form action="https://www.depop.com/4080super/" target="_blank">
-      <input type="text" placeholder="Search the archive&hellip;" aria-label="Search">
+    <form role="search">
+      <input type="search" placeholder="Search the archive&hellip;" aria-label="Search">
       <button type="submit">Go</button>
     </form>
   </div>
 
   <div class="util">
-    <div class="row"><span>Cart 0</span><span>Saved 0</span></div>
-    <div class="row">Hi, shopper &middot; <a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Depop &#8594;</a></div>
+    <div class="row"><a href="https://www.depop.com/4080super/">Depop</a> | <a href="https://www.ebay.com/usr/4080super">eBay</a></div>
   </div>
 </div>
 
@@ -458,13 +491,11 @@
   <div class="sidebar">
     <div class="box-title">Shop by category</div>
     <ul class="cat-list">
-      <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Y2K</a></li>
       <li><a href="#streetwear" data-view-link="streetwear">Streetwear</a></li>
       <li><a href="#denim" data-view-link="denim">Denim</a></li>
       <li><a href="#sneakers" data-view-link="sneakers">Sneakers</a></li>
       <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Accessories</a></li>
       <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Tech</a></li>
-      <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">One-offs</a></li>
     </ul>
 
     <div class="box-title">Where to buy</div>
@@ -540,23 +571,12 @@
       </a>
     </div>
 
-    <a class="ad-banner-wide" href="https://www.ebay.com/usr/4080super" target="_blank" rel="noopener sponsored">
-      <div>
-        <span class="abw-label">Ad</span>
-        <div class="abw-main">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-          UNDERGROUND_MARKET.LISTINGS &mdash; ACCESS GRANTED
-        </div>
-        <div class="abw-sub">encrypted deals. no questions asked. just clothes.</div>
-        <div class="abw-domain">ebay.com/usr/4080super</div>
-      </div>
-      <span class="abw-cta">ENTER &#8594;</span>
+    <a class="hardware-banner" href="https://www.ebay.com/usr/4080super" target="_blank" rel="noopener">
+      <span class="hardware-strip">4080SUPER / HARDWARE DEPT. <span>EBAY LISTINGS &#8599;</span></span>
+      <img src="images/tech1.webp" alt="Radeon graphics cards from the archive" loading="lazy">
+      <span class="hardware-copy"><strong>SECOND-HAND.<br>FULL POWER.</strong><span>Graphics cards / memory / storage</span><b>SHOP THE HARDWARE &#8594;</b></span>
+      <span class="hardware-footer">INDEPENDENT SELLER <span>ebay.com/usr/4080super</span></span>
     </a>
-
-    <div class="section-title">About this shop</div>
-    <div class="about-copy">
-      <p>4080Super is a streetwear, tech, and rare-finds archive: vintage tees, denim, sneakers, old tech, whatever turns up on a good thrift day. Hand-picked, one of one, gone once it's gone.</p>
-    </div>
 
     <div class="section-title">Related tags</div>
     <div class="tag-links">
@@ -567,16 +587,16 @@
       <a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Tech</a>
     </div>
 
-    <div class="footer-note">Photos and prices above are pulled live from tagged Depop listings and rotate through the current stock &mdash; tap any piece to view or buy it on Depop.</div>
+    <div class="footer-note">Archive selection. Check Depop for current prices and availability.</div>
   </div>
 
   <div class="newsbox">
-    <div class="box-title">Updates</div>
-    <ul class="news-list">
-      <li>New drops go up weekly, small batches only</li>
-      <li>Follow on Depop for restock alerts</li>
-      <li>DM for bundle deals on multiple pieces</li>
-      <li>Now listing on eBay too</li>
+    <div class="box-title updates-title">&#9733; Archive Alert &#9733;</div>
+    <ul class="news-list updates-alert">
+      <li>New finds added whenever they turn up</li>
+      <li>Browse clothing and sneakers on Depop</li>
+      <li>DM to ask about bundles</li>
+      <li>Shop tech and hardware on eBay</li>
     </ul>
 
     <div class="ad-stack">
@@ -709,40 +729,32 @@
 (function(){
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var GALLERIES = {
-    streetwear: [
-      { title: "Goth Money Soulja Embroidered Hoodie", img: "images/sw1.jpg", url: "https://www.depop.com/products/anonprzxy-goth-money-soulja-embroidered-hoodie-7f3d/", price: 100.00, tag: "streetwear" },
-      { title: "When Doves Cry Black Embroidered Script Hoodie", img: "images/sw2.jpg", url: "https://www.depop.com/products/4080suner-when-doves-cry-black-embroidered-b1b0/", price: 132.00, tag: "streetwear" },
-      { title: "Maroon Vault Boy 730 Pocket Tee", img: "images/sw3.jpg", url: "https://www.depop.com/products/4080suder-maroon-vault-boy-730-pocket-8588/", price: 45.00, tag: "streetwear" },
-      { title: "Dong Feng Five Founder Tee (White)", img: "images/sw4.jpg", url: "https://www.depop.com/products/40c0super-dong-feng-five-founder-tee-11b9/", price: 200.00, tag: "streetwear" },
-      { title: "1/1 Rare Goth Money Orange Grey Colorblock Zip-Up", img: "images/sw5.jpg", url: "https://www.depop.com/products/4090super-11-rare-goth-money-orange-3b46/", price: 650.00, tag: "streetwear" },
-      { title: "Bape Brown & Beige Star Pattern Zip-Up Hoodie", img: "images/sw6.jpg", url: "https://www.depop.com/products/4080sumer-bape-brown-and-beige-star-6a73/", price: 180.00, tag: "streetwear" },
-      { title: "Burgundy Striped Polo Ralph Lauren", img: "images/sw7.jpg", url: "https://www.depop.com/products/4030super-burgundy-striped-polo-ralph-lauren-2ffa/", price: 55.00, tag: "streetwear" },
-      { title: "Very Cool Warriors Grey Graphic Tee", img: "images/sw8.jpg", url: "https://www.depop.com/products/40h0super-very-cool-warriors-grey-graphic-1884/", price: 16.00, tag: "streetwear" },
-      { title: "Primitive Purple & Black Striped Tee", img: "images/sw9.jpg", url: "https://www.depop.com/products/4080su8er-primitive-purple-and-black-striped-292a/", price: 20.00, tag: "streetwear" },
-      { title: "Cookies Grey Mesh Graphic Tee", img: "images/sw10.jpg", url: "https://www.depop.com/products/4080s6per-cookies-grey-mesh-graphic-tee-2664/", price: 14.00, tag: "streetwear" },
-      { title: "Game Over Black Long Sleeve Graphic Tee", img: "images/sw11.jpg", url: "https://www.depop.com/products/4080sup0r-game-over-black-long-sleeve-6a54/", price: 24.00, tag: "streetwear" },
-      { title: "Dusty Rose Mucha Art Graphic Tee", img: "images/sw12.jpg", url: "https://www.depop.com/products/4080super-dusty-rose-mucha-art-graphic-8479/", price: 20.00, tag: "streetwear" },
-      { title: "DemonQuest Black Long Sleeve Graphic Tee", img: "images/sw13.jpg", url: "https://www.depop.com/products/4080sup5r-demonquest-black-long-sleeve-graphic-bad3/", price: 28.00, tag: "streetwear" },
-      { title: "Cookies Black Por Vida Graphic Tee", img: "images/sw14.jpg", url: "https://www.depop.com/products/4080super-cookies-black-por-vida-graphic-c66f/", price: 18.00, tag: "streetwear" },
-      { title: "Puma Olive Green Graphic Tee", img: "images/sw15.jpg", url: "https://www.depop.com/products/40804uper-puma-olive-green-graphic-tee-ea2f/", price: 12.00, tag: "streetwear" }
-    ],
-    denim: [
-      { title: "Dark Wash Jeans with Contoured Seam Detail", img: "images/dn1.jpg", url: "https://www.depop.com/products/4080supem-dark-wash-jeans-with-contoured-718a/", price: 35.10, tag: "denim" },
-      { title: "Polo Ralph Lauren Jeans (Sullivan Slim)", img: "images/dn2.jpg", url: "https://www.depop.com/products/4080supep-polo-ralph-lauren-jeans-mens-a2ce/", price: 36.00, tag: "denim" }
-    ],
-    sneakers: [
-      { title: "Nike Air Max 97 “Halloween Slime”", img: "images/sn1.jpg", url: "https://www.depop.com/products/40r0super-nike-air-max-97-halloween-7535/", price: 210.00, tag: "sneakers" },
-      { title: "Adidas Ozrah (Black / Silver)", img: "images/sn2.jpg", url: "https://www.depop.com/products/4080skper-adidas-ozrah-black-silver-0ca7/", price: 130.00, tag: "sneakers" },
-      { title: "Christian Louboutin Louis Junior Spikes", img: "images/sn3.jpg", url: "https://www.depop.com/products/40z0super-christian-louboutin-louis-junior-spikes-8ad7/", price: 650.00, tag: "sneakers" },
-      { title: "Black Monogram Trainer Sneakers (LV Logo)", img: "images/sn4.jpg", url: "https://www.depop.com/products/4020super-black-monogram-trainer-sneakers-with-10d7/", price: 500.00, tag: "sneakers" },
-      { title: "Nike x Undercover Air Force 1 Low SP “Grey Fog”", img: "images/sn5.jpg", url: "https://www.depop.com/products/4080sgper-nike-x-undercover-air-force-10f1/", price: 65.00, tag: "sneakers" },
-      { title: "Osiris D3 2001 “Binary Code”", img: "images/sn6.jpg", url: "https://www.depop.com/products/4h80super-osiris-d3-2001-binary-code-c768/", price: 250.00, tag: "sneakers" },
-      { title: "Nike Travis Scott Dunks", img: "images/sn7.jpg", url: "https://www.depop.com/products/4080suped-nike-travis-scott-dunks-size-a0e8/", price: 85.00, tag: "sneakers" }
-    ]
-  };
+  var GALLERIES = {};
+  ['streetwear', 'denim', 'sneakers', 'accessories'].forEach(function(category){
+    GALLERIES[category] = window.DEPOP_ITEMS.filter(function(item){ return item.tag === category; });
+  });
 
-  var ALL_ITEMS = GALLERIES.streetwear.concat(GALLERIES.denim, GALLERIES.sneakers);
+  GALLERIES.tech = window.TECH_ITEMS;
+  var techView = document.getElementById('view-sneakers').cloneNode(true);
+  techView.id = 'view-tech';
+  techView.dataset.view = 'tech';
+  techView.querySelector('h1').textContent = 'Tech';
+  techView.querySelector('.gsub').textContent = 'Hardware from 4080Super on eBay. Check each listing for current availability.';
+  techView.querySelector('[data-gallery]').dataset.gallery = 'tech';
+  techView.querySelector('[data-thumbs]').dataset.thumbs = 'tech';
+  document.getElementById('view-sneakers').after(techView);
+  var accessoryView = document.createElement('div');
+  accessoryView.className = 'gallery-page'; accessoryView.id = 'view-accessories';
+  accessoryView.dataset.view = 'accessories'; accessoryView.hidden = true;
+  accessoryView.innerHTML = '<a class="gallery-back" href="#top" data-view-link="home">&larr; Back to 4080Super</a><h1>Accessories</h1><p>No accessories currently listed.</p>';
+  techView.after(accessoryView);
+  document.querySelectorAll('a').forEach(function(a){
+    if(['Tech','Accessories'].includes(a.textContent.trim())){
+      var category = a.textContent.trim().toLowerCase();
+      a.href = '#' + category; a.dataset.viewLink = category; a.removeAttribute('target');
+    }
+  });
+  var ALL_ITEMS = GALLERIES.streetwear.concat(GALLERIES.denim, GALLERIES.sneakers, GALLERIES.tech);
 
   function formatPrice(p){
     return (p % 1 === 0) ? ('$' + p.toFixed(0)) : ('$' + p.toFixed(2));
@@ -816,6 +828,7 @@
     root.querySelector('.cname').textContent = item.title;
     root.querySelector('.cprice').textContent = formatPrice(item.price);
     root.querySelector('.cta').href = item.url;
+    root.querySelector('.cta').textContent = item.tag === 'tech' ? 'View on eBay >' : 'View on Depop >';
 
     var thumbBtns = thumbsWrap.querySelectorAll('button');
     thumbBtns.forEach(function(b, bi){ b.classList.toggle('active', bi === i); });
@@ -855,28 +868,51 @@
     el.querySelector('.name').textContent = item.title;
     el.querySelector('.price').innerHTML =
       '<span class="amt">' + formatPrice(item.price) + '</span>' +
-      '<span class="cta-mini">View on Depop &#8594;</span>';
+      '<span class="cta-mini">View on ' + (item.tag === 'tech' ? 'eBay' : 'Depop') + ' &#8594;</span>';
   }
 
   function initHomeGrid(){
-    var slots = document.querySelectorAll('#home-listing-grid .listing[data-slot]');
-    if(!slots.length || !ALL_ITEMS.length) return;
-    slots.forEach(function(el){
-      var slot = parseInt(el.getAttribute('data-slot'), 10) || 0;
-      var idx = (slot * 3) % ALL_ITEMS.length;
-      renderHomeSlot(el, idx);
-      el.dataset.idx = idx;
-      if(!reduced){
-        setInterval(function(){
-          var next = (parseInt(el.dataset.idx, 10) + 1) % ALL_ITEMS.length;
-          el.dataset.idx = next;
-          renderHomeSlot(el, next);
-        }, 4200 + slot * 450);
-      }
+    var grid = document.getElementById('home-listing-grid');
+    var prototype = grid.querySelector('.listing');
+    grid.replaceChildren();
+    ALL_ITEMS.forEach(function(item, idx){
+      var slot = prototype.cloneNode(true);
+      slot.dataset.slot = idx;
+      grid.appendChild(slot);
+      renderHomeSlot(slot, idx);
     });
+    var searchForm = document.querySelector('.searchwrap form');
+    var searchInput = searchForm.querySelector('input');
+    var heading = document.querySelector('.main .grid-title');
+    heading.setAttribute('role', 'status');
+    function filterArchive(){
+      if(document.getElementById('view-home').hidden) showView('home');
+      if(location.hash) history.replaceState(null, '', location.pathname + location.search);
+      var query = searchInput.value.trim().toLowerCase();
+      var words = query.split(/\s+/).filter(Boolean);
+      var count = 0;
+      grid.querySelectorAll('.listing').forEach(function(slot, idx){
+        var item = ALL_ITEMS[idx];
+        var searchable = (item.title + ' ' + item.tag + ' ' + (item.tag === 'tech' ? 'ebay hardware electronics' : 'depop clothing')).toLowerCase();
+        slot.hidden = !words.every(function(word){ return searchable.includes(word); });
+        if(!slot.hidden) count++;
+      });
+      document.getElementById('search-empty').hidden = count > 0;
+      heading.textContent = query ? count + ' result' + (count === 1 ? '' : 's') + ' for "' + searchInput.value.trim() + '"' : 'Current listings';
+    }
+    searchInput.addEventListener('input', filterArchive);
+    searchForm.addEventListener('submit', function(event){
+      event.preventDefault();
+      filterArchive();
+    });
+    var empty = document.createElement('p');
+    empty.id = 'search-empty';
+    empty.hidden = true;
+    empty.textContent = 'No pieces found. Try another search.';
+    grid.after(empty);
   }
 
-  var VIEWS = ['home', 'streetwear', 'denim', 'sneakers'];
+  var VIEWS = ['home', 'streetwear', 'denim', 'sneakers', 'tech', 'accessories'];
   function showView(name){
     if(VIEWS.indexOf(name) === -1) name = 'home';
     VIEWS.forEach(function(v){
@@ -886,6 +922,7 @@
     stopTimer('sneakers');
     stopTimer('streetwear');
     stopTimer('denim');
+    stopTimer('tech');
     if(name === 'streetwear' || name === 'denim' || name === 'sneakers') startTimer(name);
     window.scrollTo(0, 0);
   }
@@ -905,6 +942,7 @@
   });
 
   buildGallery('streetwear');
+  buildGallery('tech');
   buildGallery('denim');
   buildGallery('sneakers');
   initHomeGrid();

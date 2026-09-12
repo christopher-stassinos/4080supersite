@@ -1,0 +1,195 @@
+/* Compact marketplace rails; override the original embedded stylesheet. */
+html body .layout{display:grid;grid-template-columns:174px minmax(0,1fr) 184px;width:100%;max-width:1180px;gap:20px}
+html body .layout[hidden]{display:none}
+html body .sidebar,html body .newsbox{min-width:0}
+html body .listing-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 12px}
+html body .listing[hidden]{display:none}
+html body .listing .name{height:30px;white-space:normal;line-height:15px}
+html body .brand-text .name{color:#245b2b;font-size:24px}
+html body .tagline{line-height:1.5}
+html body .ad-stack{gap:6px;margin-top:12px}
+html body .ad-box{border-radius:0;box-shadow:none;padding:9px;min-height:108px}
+html body .ad-logo{font-size:16px}
+html body .ad-domain{overflow-wrap:anywhere}
+html body .box-title,html body .grid-title{letter-spacing:0}
+.rail-heading{font:10px 'Courier New',monospace;margin:16px 0 5px;color:#666;display:flex;justify-content:space-between;align-items:center}
+.rail-heading button{font:inherit;border:1px outset #ccc;background:#eee;padding:2px 4px}
+.net-banner{height:90px;display:flex;flex-direction:column;justify-content:center;position:relative;padding:6px 8px;border:3px outset #ccc;text-decoration:none;overflow:hidden;transition:opacity .35s;color:#fff;background:#111}
+.net-banner strong{font:bold italic 18px Arial;line-height:1.05;overflow-wrap:anywhere}
+.net-banner small{font:10px 'Courier New',monospace;margin-top:4px}
+.net-banner.silver{background:linear-gradient(#fff,#a3a3a3,#f3f3f3);color:#111}
+.net-banner.red{background:#d81924;color:#fff}
+.net-banner.lime{background:#101710;color:#aaff00}
+.net-banner.blue{background:#043ea5;color:#fff500}
+.net-banner.pink{background:#f9a2dd;color:#151515}
+.net-banner.yellow{background:#fff000;color:#111}
+.net-banner.fade{opacity:0}
+.net-banner.photo{height:148px;background:#111}
+.net-banner.photo img{position:absolute;right:0;top:0;width:54%;height:100%;object-fit:cover;opacity:.8}
+.net-banner.photo strong,.net-banner.photo small{position:relative;max-width:58%;text-shadow:1px 1px #000}
+.network-list{display:grid;gap:5px}
+.chatroom{margin-top:18px;border:1px solid #909090;font:11px 'Courier New',monospace;background:#f5f5f5}
+.chat-title{background:#245b2b;color:white;padding:6px;display:flex;justify-content:space-between;gap:5px}
+.chat-title span{font-size:9px;align-self:center}
+.chat-log{height:172px;overflow:auto;padding:7px;background:#fff;overflow-wrap:anywhere}
+.chat-log p{margin:0 0 8px;line-height:1.4}
+.chatroom form{padding:7px;display:grid;gap:5px}
+.chatroom input,.chatroom button{font:11px 'Courier New',monospace;min-width:0;width:100%;padding:6px;border:1px solid #aaa;border-radius:0}
+.chatroom button{background:#e4e4e4;color:#111}
+.chat-note{font:9px Arial;line-height:1.4;padding:0 7px 7px;color:#666;margin:0}
+.newsbox > .chatroom{margin-bottom:18px}
+@media(max-width:850px){html body .layout{grid-template-columns:140px minmax(0,1fr);gap:14px}html body .newsbox{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px}.newsbox>.box-title,.newsbox>.news-list{display:none}.newsbox .chatroom{grid-column:1/-1}}
+@media(max-width:540px){html body .layout{display:flex;padding:12px;gap:16px}html body .main{order:0;flex:1 1 100%}html body .sidebar{order:1;flex:1 1 100%}html body .newsbox{order:2;display:block;flex:1 1 100%}html body .listing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar .network-list,.newsbox .network-list{grid-template-columns:1fr 1fr}.searchwrap{max-width:100%;min-width:0}.searchwrap input{min-width:0}.site-header{gap:10px}.util{display:none}.net-banner strong{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.net-banner{transition:none}}
+
+/* Brand-specific archive banners. */
+.network-list{gap:7px}
+.net-banner.brand-banner{height:100px;align-items:center;text-align:center;padding:10px 8px;border:1px solid #777;box-shadow:inset 0 0 0 2px #ffffff25,2px 2px 0 #bbb;gap:4px;background:#111;color:#fff}
+.brand-banner strong{font:bold 20px Arial;line-height:1.05;max-width:100%;letter-spacing:0}
+.brand-banner .brand-logo{width:90px;height:42px;object-fit:contain;filter:invert(1)}
+.brand-banner .brand-destination{font:8px 'Courier New',monospace;margin:3px 0 0}
+.brand-banner:hover{outline:1px solid currentColor;outline-offset:-4px}
+.net-banner.brand-chrome{background:linear-gradient(165deg,#fff,#bcbcbc 45%,#eee 48%,#a5a5a5);color:#111}
+.brand-chrome strong{font:bold 25px 'Old English Text MT','Engravers Old English','Times New Roman',serif;text-shadow:1px 1px white;transform:rotate(-5deg)}
+.net-banner.brand-chrome{padding-left:29px;padding-right:29px}
+.brand-chrome::before,.brand-chrome::after{content:"";position:absolute;top:18px;width:25px;height:58px;background:url('images/brands/gothic-cross.svg') center/contain no-repeat;filter:drop-shadow(1px 1px 1px #555);pointer-events:none}
+.brand-chrome::before{left:3px;transform:rotate(-8deg)}
+.brand-chrome::after{right:3px;transform:rotate(8deg)}
+.brand-chrome .brand-destination{position:relative;white-space:nowrap;font-size:7px}
+.net-banner.brand-supreme{background:#e7192d}
+.brand-supreme strong{font:bold italic 32px Arial}
+.net-banner.brand-hellstar{background:#101010;color:#fff;border:1px solid #666;box-shadow:2px 2px #bbb;padding:16px 10px}
+.brand-hellstar strong{font:italic 900 25px Impact,'Arial Black',sans-serif;line-height:1;transform:rotate(-4deg);text-shadow:1px 1px #a31c22;white-space:nowrap}
+.net-banner.brand-goth{background:#050505;color:#f2f2ed;border:1px solid #666;box-shadow:2px 2px #bbb;padding:16px 12px}
+.brand-goth strong{font:700 27px ArchiveBlackletter,serif;line-height:1.05;text-shadow:none;max-width:130px;text-transform:capitalize}
+.net-banner.brand-bape{background:repeating-linear-gradient(125deg,#2a3627 0 22px,#495035 22px 48px,#1d271e 48px 58px);color:#fff4cb}
+.brand-bape strong{font:bold 22px Impact,'Arial Black',sans-serif;transform:rotate(-4deg);text-shadow:2px 2px #000}
+.net-banner.brand-nike{background:#ff5a19;color:#111}
+.brand-nike .brand-logo{filter:none;width:112px;height:49px}
+.brand-nike strong,.brand-adidas strong,.brand-puma strong,.brand-reebok strong,.brand-asus strong,.brand-sony strong{display:none}
+.brand-adidas .brand-logo,.brand-puma .brand-logo,.brand-reebok .brand-logo,.brand-asus .brand-logo,.brand-sony .brand-logo{width:120px;height:62px}
+.net-banner.brand-stussy{background:#f1df33;color:#111}
+.brand-stussy strong{font:bold italic 31px 'Brush Script MT',cursive;transform:rotate(-10deg)}
+.net-banner.brand-carhartt{background:#ececec;color:#111}
+.brand-carhartt strong{font:bold 27px 'Arial Black',Arial,sans-serif}
+.net-banner.brand-newbalance{background:#b51928}
+.net-banner.brand-puma{background:#1643a3}
+.net-banner.brand-reebok{background:#fff;color:#162d5b}
+.brand-reebok .brand-logo{filter:none}
+.net-banner.brand-underarmour{background:#252525}
+.brand-underarmour strong{font-size:14px}
+.net-banner.brand-diesel{background:#d6001c}
+.brand-diesel strong{font:bold 30px Impact,'Arial Black',sans-serif}
+.net-banner.brand-rick{background:#ededed;color:#111}
+.brand-rick strong{font:italic 23px Georgia,serif}
+.net-banner.brand-nvidia{background:#76b900;color:#101900}
+.brand-nvidia .brand-logo{filter:none}
+.net-banner.brand-openai{background:#eeeae3;color:#171717}
+.brand-openai .brand-logo{filter:none}
+.brand-openai strong{font-size:23px;font-weight:500}
+.net-banner.brand-amd{background:#161616;border-bottom:5px solid #e32623}
+.net-banner.brand-intel{background:#0068b5}
+.net-banner.brand-asus{background:linear-gradient(140deg,#161616,#424242)}
+.net-banner.brand-sony{background:#fff;color:#111}
+.brand-sony .brand-logo{filter:none}
+.net-banner.brand-playstation{background:#1232a0}
+.brand-playstation strong{font-size:17px}
+.net-banner.brand-apple{background:linear-gradient(#fdfdfd,#c7c7c7);color:#111}
+.brand-apple .brand-logo{filter:none}
+.net-banner.brand-linux{background:#ffe14c;color:#111}
+.brand-linux .brand-logo{filter:none}
+.net-banner.brand-linux{background:#f7f7f5;color:#111;gap:10px}
+.linux-monero-logos{display:flex;align-items:center;justify-content:center;gap:12px}
+.linux-monero-logos .brand-logo,.linux-monero-logos .monero-logo{width:38px;height:38px;object-fit:contain}
+.linux-monero-logos>span{font:20px 'Courier New',monospace;color:#777}
+.linux-monero-logos .monero-logo{filter:invert(43%) sepia(98%) saturate(2230%) hue-rotate(358deg) brightness(100%) contrast(105%)}
+.brand-linux strong{font:bold 17px Arial,sans-serif}
+.product-ad{display:flex;flex-direction:column;background:#fff;color:#111;border:1px solid #777;box-shadow:2px 2px #bbb;text-decoration:none;min-width:0}
+.product-ad img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f4f4f4;display:block}
+.product-ad strong{font:bold 12px Arial;line-height:1.3;padding:7px 7px 4px;overflow-wrap:anywhere}
+.product-ad span{font:9px 'Courier New',monospace;background:#111;color:#fff;padding:6px 7px;margin-top:auto}
+.product-ad:hover{border-color:#245b2b}
+#view-tech .gallery-main img{object-fit:contain;aspect-ratio:1/1}
+.net-banner.brand-claude{height:207px;background:#191817;color:#eee8dc;gap:15px}
+.brand-claude .brand-logo{width:140px;max-width:100%;height:120px;filter:none;image-rendering:pixelated}
+.brand-claude strong{font:28px Georgia,serif}
+.net-banner.brand-ftp{background:#000;color:#fff}
+.brand-ftp strong{font:italic 900 52px 'Arial Black',Arial,sans-serif;transform:skew(-8deg);text-shadow:2px 2px #777}
+.net-banner.brand-margiela{background:#fafafa;color:#151515;gap:5px}
+.brand-margiela strong{font:22px 'Times New Roman',serif;line-height:1.05}
+.brand-margiela small{font:9px Arial,sans-serif;margin:0}
+.brand-ftp strong,.brand-margiela strong{display:none}
+.brand-ftp .brand-logo{width:128px;height:66px;filter:brightness(0) invert(1);object-fit:contain}
+.brand-margiela .brand-logo{width:146px;max-width:100%;height:50px;filter:none;object-fit:contain}
+.net-banner.brand-ftp,.net-banner.brand-margiela{justify-content:center;align-items:center;gap:0}
+body{padding-bottom:70px}
+.artifact-player{position:fixed;bottom:0;left:0;right:0;z-index:900;display:flex;align-items:center;gap:8px;padding:10px 18px;background:#eee;border-top:2px solid #222;color:#171717;font:11px 'Courier New',monospace;height:62px}
+.player-btn{flex:none;width:30px;height:30px;padding:7px;border:2px outset #ccc;background:#f5f5f5;color:#222;display:grid;place-items:center}
+.player-btn:hover{background:#fff}.player-btn svg{width:14px;height:14px;fill:currentColor}
+.player-meta{flex:1;min-width:0;overflow:hidden}.player-track{overflow:hidden;white-space:nowrap;font-size:12px;color:#245b2b;font-weight:bold}
+.player-track-viewport{display:block;overflow:hidden}.player-track-inner{display:inline-flex;white-space:nowrap}.player-track-copy{flex:none}.player-track-gap{width:var(--track-gap,36px);flex:none}
+.player-track.is-scrolling .player-track-inner{animation:track-ticker var(--track-duration,16s) linear infinite}
+@keyframes track-ticker{to{transform:translateX(calc(-1 * var(--track-shift,0px)))}}
+.player-sub{font-size:9px;margin-top:4px;color:#666}
+.player-bars{height:20px;display:flex;align-items:end;gap:3px}.player-bars span{width:3px;height:4px;background:#245b2b}
+.is-playing .player-bars span{animation:music-eq .8s infinite alternate}.player-bars span:nth-child(2){animation-delay:.2s}.player-bars span:nth-child(3){animation-delay:.4s}
+@keyframes music-eq{to{height:20px}}
+.artifact-player:not(.is-muted) #player-mute-icon path:last-child{display:none}
+#yt-host{position:fixed;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+@media(max-width:540px){.artifact-player{gap:5px;padding:8px}.player-bars{display:none}.player-sub{font-size:8px}.player-btn{width:27px;height:29px}}
+@media(prefers-reduced-motion:reduce){.player-track.is-scrolling .player-track-inner,.is-playing .player-bars span{animation:none}}
+.net-banner.brand-hyperliquid{height:207px;background:#072923;color:#97fce4;border:1px solid #79e9c4;box-shadow:inset 0 0 0 4px #103e34,2px 2px #aaa;gap:10px}
+.brand-hyperliquid::before{content:"777";font:bold 43px 'Courier New',monospace;letter-spacing:0;border:3px double #97fce4;padding:6px 12px;background:#021813;color:#d9fff1;text-shadow:2px 2px #257960}
+.brand-hyperliquid strong{font:bold 18px Arial,sans-serif}
+.brand-hyperliquid small{font:9px 'Courier New',monospace}
+.brand-hyperliquid::after{content:"HARDWARE JACKPOT / EBAY >";font:bold 8px 'Courier New',monospace;background:#97fce4;color:#072923;padding:6px 5px;max-width:100%}
+html body{padding-bottom:0}
+html body .artifact-player{left:auto;right:16px;bottom:12px;width:194px;height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:5px;padding:0 8px 8px;border:0;background:transparent;filter:drop-shadow(2px 3px 0 #0002)}
+.dj-avatar{display:block;width:178px;height:168px;object-fit:contain;image-rendering:pixelated;transform-origin:bottom center;pointer-events:none}
+.artifact-player .player-meta{order:2;flex:1 1 100%;background:#f3f3f3;border:1px solid #888;padding:6px;box-shadow:2px 2px #aaa}
+.artifact-player .player-track{font-size:10px}.artifact-player .player-sub{font-size:8px;line-height:1.4}
+.artifact-player .player-bars{display:none}
+.artifact-player .player-btn{background:#eee}
+.dj-minimize{position:absolute;top:2px;right:0;width:22px;height:22px;border:1px solid #777;background:#eee;font:bold 16px Arial;color:#222}
+.is-playing .dj-avatar{animation:dj-bob .65s ease-in-out infinite alternate}
+@keyframes dj-bob{to{transform:rotate(3deg) translateY(-3px)}}
+.artifact-player.dj-compact .dj-avatar{height:54px;width:64px}.artifact-player.dj-compact .player-meta,.artifact-player.dj-compact #player-prev,.artifact-player.dj-compact #player-next,.artifact-player.dj-compact #player-mute{display:none}
+html body .artifact-player.dj-compact{width:108px;padding:4px;align-items:center}
+@media(max-width:540px){html body .artifact-player{right:6px;bottom:6px;width:164px}.dj-avatar{width:146px;height:132px}}
+@media(prefers-reduced-motion:reduce){.is-playing .dj-avatar{animation:none}}
+html body .artifact-player{width:320px;max-width:calc(100vw - 24px);background:#eee;border:1px solid #888;padding:8px;filter:none;box-shadow:2px 2px #aaa}
+.player-volume{width:110px;min-width:0;accent-color:#245b2b;margin:0 4px}
+.net-banner.brand-palmangels{background:#080808;color:#fff}
+@font-face{font-family:ArchiveBlackletter;src:url('images/brands/blackletter.ttf') format('truetype');font-weight:700;font-display:swap}
+.brand-palmangels strong{font:700 25px ArchiveBlackletter,serif;line-height:1.1;display:flex;white-space:nowrap;padding-bottom:16px}
+.brand-palmangels strong span{display:inline-block}
+.net-banner.brand-saintlaurent{background:#fafafa;color:#111;gap:8px}
+.brand-saintlaurent strong{font:bold 17px 'Arial Narrow',Arial,sans-serif;line-height:1.15;white-space:nowrap}
+.brand-saintlaurent small{font:9px Arial,sans-serif;margin:0}
+.net-banner.brand-tradeogre{height:207px;background:#15191d;color:#eee;border:1px solid #5c666d;gap:13px;box-shadow:2px 2px #aaa}
+.brand-tradeogre strong{display:none}
+.net-banner.brand-tradeogre{height:230px;background:#202020;gap:0;padding:16px 8px}
+.tradeogre-emblem{width:140px;height:118px;object-fit:contain;flex:none}
+.tradeogre-wordmark{width:160px;max-width:100%;height:82px;object-fit:contain;clip-path:inset(6px 0 0);flex:none}
+.brand-tradeogre small{display:none}
+.shop-alert{margin:14px 0 0;border:2px solid #222;background:#fff;box-shadow:2px 2px #aaa}
+.shop-alert .updates-title{font:700 11px 'Courier New',monospace;text-align:center;background:#eeff57;color:#111;margin:0;padding:7px 3px;border-bottom:2px solid #222;letter-spacing:0;animation:alert-color 3s steps(1,end) infinite}
+.shop-alert .shop-list{padding:4px 8px}
+.shop-alert .shop-list li{padding:5px 0}
+.shop-alert .updates-alert{padding:5px 8px;font-size:10px;border-top:1px dotted #aaa}
+.shop-alert .updates-alert li{line-height:1.4;padding:0;border:0}
+.shop-alert .contact-box{margin:0;padding:8px;border:0;border-top:1px solid #bbb;border-radius:0;box-shadow:none;background:#f3f3f3}
+.shop-alert .contact-box-title{font-size:11px;margin-bottom:3px}
+.shop-alert .contact-box-sub{font-size:10px;margin-bottom:4px}
+@keyframes alert-color{0%,75%{background:#eeff57}76%,100%{background:#b6f5d0}}
+@media(prefers-reduced-motion:reduce){.shop-alert .updates-title{animation:none}}
+.hardware-banner{display:grid;grid-template-columns:34% minmax(0,1fr);margin:20px 0;border:2px solid #222;background:#ededed;color:#151515;text-decoration:none;box-shadow:3px 3px #aaa;font:10px 'Courier New',monospace}
+.hardware-strip,.hardware-footer{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px;padding:6px 8px;background:#171717;color:#fff;font-size:9px}
+.hardware-strip{background:#c8f53c;color:#111;font-weight:bold;border-bottom:2px solid #222}
+.hardware-banner>img{display:block;width:100%;height:158px;object-fit:contain;background:#fff;border-right:1px solid #999}
+.hardware-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:9px;padding:14px;min-width:0}
+.hardware-copy strong{font:900 23px Arial,sans-serif;line-height:1.05;letter-spacing:0}
+.hardware-copy>span{font-size:10px;line-height:1.4}
+.hardware-copy>b{border-bottom:2px solid #111;padding-bottom:3px;font-size:10px}
+.hardware-banner:hover .hardware-copy>b{background:#c8f53c}
+@media(max-width:540px){.hardware-copy{padding:10px;gap:7px}.hardware-copy strong{font-size:19px}.hardware-footer{font-size:8px}}
