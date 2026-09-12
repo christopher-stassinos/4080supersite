@@ -5,6 +5,12 @@
   html body .network-list > .mobile-feature{height:84px;min-height:0;box-sizing:border-box;aspect-ratio:auto;padding:6px;border:1px solid #888;box-shadow:none}
   html body .network-list > .mobile-feature strong{font-size:17px;line-height:1.1}
   html body .network-list > .mobile-feature .brand-logo{max-height:40px}
+  html body .network-list > .brand-tradeogre{order:1}
+  html body .network-list > .brand-claude{order:2;gap:3px}
+  html body .network-list .brand-tradeogre .tradeogre-emblem{display:none}
+  html body .network-list .brand-tradeogre .tradeogre-wordmark{width:100%;height:64px;object-fit:contain}
+  html body .network-list .brand-claude .brand-logo{width:64px;height:40px}
+  html body .network-list .brand-palmangels strong{font-size:20px;padding-bottom:12px}
   html body .network-list .brand-destination{display:none}
   html body .rail-heading button{display:none}
   html body .network-list .fade{opacity:1}
