@@ -32,7 +32,7 @@
     submit.disabled = true;
     status.textContent = 'Saving...';
     try {
-      const response = await fetch('https://desktop-0tm15db.tail6415f.ts.net/api/subscribe', {
+      const response = await fetch('https://4080-email-queue.email-queue.workers.dev/api/subscribe', {
         signal: AbortSignal.timeout(15000),
         method: 'POST', headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email: form.elements.email.value, consent: form.querySelector('[type=checkbox]').checked, website: trap.value})
