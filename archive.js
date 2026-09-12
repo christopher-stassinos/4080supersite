@@ -11,7 +11,8 @@
   hub.setAttribute('aria-label','Shop links and updates');
   shops.previousElementSibling.replaceWith(hub);
   hub.append(alertTitle, shops, updates, contact);
-  contact.querySelector('.contact-box-title').textContent = 'Bundles / questions';
+  alertTitle.textContent = 'SHOP / UPDATES';
+  contact.querySelector('.contact-box-title').textContent = 'QUESTIONS / BUNDLES';
   contact.querySelector('.contact-box-sub').textContent = '@4080super on Instagram';
   updates.replaceChildren();
   const note = document.createElement('li');
@@ -30,7 +31,7 @@
   const tech = [
     ['NVIDIA','','nvidia','nvidia'],
     ['OpenAI','','openai','openai'],
-    ['HYPERLIQUID','HIGH RISK. HIGH SPEC.','hyperliquid'],
+    ['Hyperliquid','','hyperliquid','hyperliquid.png'],
     ['Claude','','claude','claude-crab'],
     ['TradeOgre','4080SUPER / EBAY','tradeogre'],
     ['Linux + Monero','','linux','linux']
@@ -123,14 +124,15 @@
     const banners = Array.from(list.children);
     items.forEach((item,i) => {
       const a = document.createElement('a');
-      a.className = 'product-pick'; a.href = item.url; a.target = '_blank'; a.rel = 'noopener';
+      a.className = 'inventory-tile'; a.href = item.url; a.target = '_blank'; a.rel = 'noopener';
       const img = document.createElement('img'); img.src = item.img; img.alt = item.title; img.loading = 'lazy';
       const label = document.createElement('strong'); label.textContent = item.title;
       const destination = document.createElement('span'); destination.textContent = '4080SUPER / ' + market + ' >';
       const badge = document.createElement('b');
       badge.className = 'pick-badge';
-      badge.textContent = ['HOT', 'RARE', 'LTD'][i % 3];
+      badge.textContent = window.listingLabel(item);
       badge.dataset.kind = badge.textContent.toLowerCase();
+      badge.hidden = !badge.textContent;
       a.append(badge,img,label,destination);
       const anchor = banners[Math.min(i*2+1,banners.length-1)];
       anchor.after(a);

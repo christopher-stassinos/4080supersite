@@ -2,9 +2,9 @@
 .signup-dialog::backdrop{background:#0008}
 .signup-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 8px;background:#245b2b;color:#fff;font:bold 10px 'Courier New',monospace}
 .signup-close{display:grid;place-items:center;width:25px;height:25px;padding:0;flex:none;border:2px outset #ddd;background:#eee;color:#111;font:20px Arial}
-.signup-content{padding:24px}
+.signup-content{padding:18px}
 .signup-stamp{font:bold 9px 'Courier New',monospace;background:#e9f64c;padding:4px 5px}
-.signup-content h2{font:bold 27px Arial;margin:18px 0 9px;letter-spacing:0}
+.signup-content h2{font:bold 23px Georgia,'Times New Roman',serif;margin:14px 0 9px;letter-spacing:0}
 .signup-content>p{line-height:1.6;margin:0 0 18px;color:#555}
 .signup-content form>label:first-child{display:block;font-weight:bold;font-size:11px;margin-bottom:6px}
 #signup-email{width:100%;padding:10px;border:1px solid #888;border-radius:0;font:13px Arial;background:#fff;color:#111}
@@ -15,3 +15,19 @@
 .signup-status{font:10px Arial;line-height:1.4;color:#666;margin:8px 0 18px}
 .signup-later,.signup-reopen{background:none;border:0;padding:0;color:#1a4fa0;text-decoration:underline;font:11px Arial;cursor:pointer}
 .signup-dialog :focus-visible{outline:2px solid #245b2b;outline-offset:3px}
+/* Native dialogs sit above the custom cursor in the browser's top layer. */
+html.js-cursor-active:has(.signup-dialog[open]),html.js-cursor-active:has(.signup-dialog[open]) *{cursor:auto!important}
+html.js-cursor-active .signup-dialog button,html.js-cursor-active .signup-dialog input[type=checkbox]{cursor:pointer!important}
+html.js-cursor-active .signup-dialog input[type=email]{cursor:text!important}
+html:has(.signup-dialog[open]) .star-cursor{visibility:hidden}
+.signup-dialog::backdrop{cursor:default;background:#0006}
+.signup-dialog,.signup-dialog *{box-sizing:border-box}
+.signup-dialog{width:370px;border:3px outset #d7d7d7;background:#f5f5f5;box-shadow:4px 4px 0 #171717}
+.signup-top{background:#202020;padding:5px 6px;font:bold 10px 'Courier New',monospace;border-bottom:1px solid #000}
+.signup-stamp{display:block;width:fit-content;background:#e9f64c;border:1px solid #222;padding:3px 6px;font:bold 9px 'Courier New',monospace}
+.signup-content>p{font:12px/1.5 Arial;color:#444;padding-bottom:12px;border-bottom:1px solid #aaa;margin-bottom:13px}
+#signup-email{border:2px inset #ddd;padding:9px;font:12px 'Courier New',monospace}
+.signup-submit{background:#e9f64c;color:#171717;border:2px outset #d9dd91;padding:9px;font:bold 12px 'Courier New',monospace}
+.signup-submit:active:not(:disabled){border-style:inset}
+.signup-status{min-height:28px;margin-bottom:10px}
+.signup-close{width:23px;height:23px}
