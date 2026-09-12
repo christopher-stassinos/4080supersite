@@ -1,0 +1,915 @@
+<title>4080Super</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink: #1a1a1a;
+    --ink-soft: #666;
+    --line: #d9d9d9;
+    --panel: #f7f7f7;
+    --link: #1a4fa0;
+    --accent: #b8973f;
+    --accent-2: #6a9955;
+    --accent-3: #a83c3c;
+  }
+
+  *{ box-sizing: border-box; }
+  html, body{ background: #ffffff; color: var(--ink); }
+  body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a{ color: var(--link); }
+
+  html.js-cursor-active, html.js-cursor-active *{ cursor: none !important; }
+  .star-cursor{
+    position: fixed; top: 0; left: 0;
+    width: 16px; height: 16px;
+    margin: -8px 0 0 -8px;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+  }
+  .trail-star{
+    position: fixed; top: 0; left: 0;
+    margin: -6px 0 0 -6px;
+    font-size: 11px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(var(--x), var(--y)) scale(var(--s, 1));
+    animation: trail-fade 0.6s ease-out forwards;
+  }
+  @keyframes trail-fade{
+    0%{ opacity: 0.85; transform: translate(var(--x), var(--y)) scale(var(--s, 1)); }
+    100%{ opacity: 0; transform: translate(var(--x), calc(var(--y) - 10px)) scale(0.3); }
+  }
+
+  /* ================= header ================= */
+  .site-header{
+    border-bottom: 2px solid var(--ink);
+    padding: 12px 18px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand{ display: flex; align-items: center; gap: 8px; }
+  .brand svg{ width: 26px; height: 26px; color: var(--ink); flex: none; }
+  .brand-text{ line-height: 1.15; }
+  .brand-text .name{ font-size: 19px; font-weight: bold; color: var(--ink); }
+  .brand-text .sub{ font-size: 10.5px; color: var(--ink-soft); font-style: italic; }
+
+  .searchwrap{ flex: 1 1 260px; max-width: 420px; display: flex; align-items: center; gap: 8px; }
+  .searchwrap .lbl{ font-size: 10.5px; color: var(--ink-soft); white-space: nowrap; }
+  .searchwrap form{ flex: 1; display: flex; }
+  .searchwrap input{
+    flex: 1;
+    border: 1px solid var(--line);
+    padding: 6px 8px;
+    font-size: 12px;
+    font-family: inherit;
+    color: var(--ink);
+    background: #fff;
+  }
+  .searchwrap button{
+    border: 1px solid var(--ink);
+    background: var(--panel);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .util{ text-align: right; font-size: 10.5px; color: var(--ink-soft); line-height: 1.6; }
+  .util .row span{ margin-left: 10px; }
+  .util .row span:first-child{ margin-left: 0; }
+
+  /* ================= layout ================= */
+  .layout{
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    padding: 16px 18px 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .layout[hidden]{ display: none; }
+  .sidebar{ flex: 0 1 190px; min-width: 170px; }
+  .main{ flex: 1 1 560px; min-width: 0; }
+  .newsbox{ flex: 0 1 220px; min-width: 190px; }
+
+  .box-title{
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 5px;
+    margin: 0 0 8px;
+  }
+  .cat-list{ list-style: none; margin: 0 0 18px; padding: 0; }
+  .cat-list li{ border-bottom: 1px solid var(--line); }
+  .cat-list li:last-child{ border-bottom: none; }
+  .cat-list a{ display: block; padding: 6px 2px; font-size: 12px; text-decoration: none; }
+  .cat-list a:hover{ text-decoration: underline; }
+
+  .shop-list{ list-style: none; margin: 0; padding: 0; font-size: 11.5px; }
+  .shop-list li{ display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px dotted var(--line); }
+  .shop-list li:last-child{ border-bottom: none; }
+  .shop-list .on{ color: var(--accent-2); font-weight: bold; }
+  .shop-list .off{ color: var(--ink-soft); }
+
+  .contact-box{
+    display: block;
+    margin-top: 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--panel);
+    padding: 10px 11px;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .contact-box-title{ font-size: 12px; font-weight: bold; color: var(--ink); margin-bottom: 3px; }
+  .contact-box-sub{ font-size: 10.5px; color: var(--ink-soft); margin-bottom: 7px; }
+  .contact-box-cta{ font-size: 10.5px; font-weight: bold; color: var(--link); text-decoration: underline; }
+
+  .news-list{ list-style: none; margin: 0; padding: 0; font-size: 11.5px; }
+  .news-list li{ padding: 5px 0; border-bottom: 1px dotted var(--line); }
+  .news-list li:last-child{ border-bottom: none; }
+  .news-list li::before{ content: "\2192  "; color: var(--accent); font-weight: bold; }
+
+  h1.shop-title{ font-size: 20px; margin: 0 0 4px; }
+  .tagline{ font-size: 12px; color: var(--ink-soft); max-width: 62ch; line-height: 1.6; margin: 4px 0 14px; }
+
+  .grid-title{
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 0 0 12px;
+  }
+
+  .listing-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .listing{ text-decoration: none; color: var(--ink); }
+  .listing .thumb{
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(45deg, var(--panel) 25%, transparent 25%) -10px 0/16px 16px,
+      linear-gradient(-45deg, var(--panel) 25%, transparent 25%) -10px 0/16px 16px,
+      #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .listing .thumb svg{ width: 30px; height: 30px; color: #b8b8b8; }
+  .listing .thumb img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .listing .tag{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 2;
+    font-size: 9px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--tag-color, var(--accent-3));
+    padding: 1px 5px;
+    letter-spacing: 0.02em;
+  }
+  .listing .name{
+    font-size: 11.5px;
+    font-weight: bold;
+    margin-top: 5px;
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .listing .price{ font-size: 11px; margin-top: 2px; height: 30px; }
+  .listing .price .amt{
+    display: block;
+    height: 15px;
+    line-height: 15px;
+    color: var(--ink);
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .listing .price .cta-mini{
+    display: block;
+    height: 15px;
+    line-height: 15px;
+    color: var(--link);
+    text-decoration: underline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .section-title{
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 5px;
+    margin: 18px 0 10px;
+  }
+
+  .about-copy p{ font-size: 12px; line-height: 1.75; max-width: 62ch; margin: 0 0 8px; }
+
+  .tag-links{ display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 11.5px; }
+  .tag-links a{ text-decoration: underline; }
+  .tag-links .sep{ color: var(--line); }
+
+  .footer-note{ font-size: 10.5px; color: var(--ink-soft); border-top: 1px dotted var(--line); margin-top: 18px; padding-top: 10px; }
+
+  /* ---- "sponsored" ad units, styled like real embedded display ads. purely decorative pastiche; every link goes to the shop's own Depop/eBay ---- */
+  .ad-stack{ display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
+  .ad-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 2px;
+    padding: 10px 11px 10px;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.14), 0 2px 6px rgba(0,0,0,0.10);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .ad-box:hover{ box-shadow: 0 2px 4px rgba(0,0,0,0.18), 0 4px 12px rgba(0,0,0,0.16); transform: translateY(-1px); }
+  .ad-label{
+    position: absolute;
+    top: 6px; right: 6px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    color: rgba(0,0,0,0.55);
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 2px;
+    padding: 1px 4px;
+  }
+  .ad-head{ display: flex; align-items: center; gap: 7px; margin: 1px 26px 5px 0; }
+  .ad-icon{ width: 20px; height: 20px; flex: none; }
+  .ad-logo{ font-size: 14.5px; font-weight: bold; line-height: 1.15; }
+  .ad-tag{ font-size: 9.5px; margin-bottom: 7px; line-height: 1.45; }
+  .ad-domain{ font-size: 9px; margin-bottom: 8px; opacity: 0.75; }
+  .ad-cta{
+    align-self: flex-start;
+    font-size: 10.5px;
+    font-weight: bold;
+    padding: 5px 11px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+
+  .ad-chrome-hearts{ background: linear-gradient(155deg, #f4f4f4, #dadada); border-color: rgba(0,0,0,0.3); color: #111; }
+  .ad-chrome-hearts .ad-label{ color: rgba(0,0,0,0.55); background: rgba(255,255,255,0.75); }
+  .ad-chrome-hearts .ad-logo{ font-family: "Times New Roman", Georgia, serif; letter-spacing: 0.03em; }
+  .ad-chrome-hearts .ad-icon{ color: #1a1a1a; }
+  .ad-chrome-hearts .ad-tag{ color: #444; }
+  .ad-chrome-hearts .ad-domain{ color: #333; }
+  .ad-chrome-hearts .ad-cta{ background: #111; color: #fff; }
+
+  .ad-supreme{ background: linear-gradient(155deg, #e0242c, #b8151c); border-color: rgba(0,0,0,0.35); }
+  .ad-supreme .ad-logo, .ad-supreme .ad-tag, .ad-supreme .ad-domain{ color: #fff; }
+  .ad-supreme .ad-logo{ font-style: italic; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; font-family: Arial, Helvetica, sans-serif; }
+  .ad-supreme .ad-domain{ opacity: 0.85; }
+  .ad-supreme .ad-cta{ background: #fff; color: #b8151c; }
+  .ad-supreme .ad-label{ background: rgba(255,255,255,0.85); }
+
+  .ad-amd{ background: linear-gradient(160deg, #1b1b1b, #060606); border-color: rgba(226,35,26,0.55); }
+  .ad-amd .ad-tag, .ad-amd .ad-domain{ color: #d8d8d8; }
+  .ad-amd .ad-logo{ color: #fff; letter-spacing: 0.02em; }
+  .ad-amd .ad-icon{ color: #e2231a; }
+  .ad-amd .ad-cta{ background: #e2231a; color: #fff; }
+  .ad-amd .ad-label{ background: rgba(20,20,20,0.7); color: #ddd; border-color: rgba(255,255,255,0.25); }
+
+  .ad-cheatengine{ background: linear-gradient(160deg, #06210a, #021205); border-color: rgba(0,255,65,0.45); }
+  .ad-cheatengine .ad-logo, .ad-cheatengine .ad-tag, .ad-cheatengine .ad-domain{
+    color: #39ff6a;
+    font-family: "Courier New", monospace;
+  }
+  .ad-cheatengine .ad-icon{ color: #39ff6a; }
+  .ad-cheatengine .ad-cta{ background: #39ff6a; color: #06210a; font-family: "Courier New", monospace; }
+  .ad-cheatengine .ad-label{ background: rgba(6,33,10,0.75); color: #39ff6a; border-color: rgba(57,255,106,0.5); }
+  .ad-cheatengine .ad-blink{ animation: ad-blink 1.1s steps(1, start) infinite; }
+  @media (prefers-reduced-motion: reduce){ .ad-cheatengine .ad-blink{ animation: none; } }
+  @keyframes ad-blink{ 50%{ opacity: 0.35; } }
+
+  .ad-banner-wide{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    border: 1px solid rgba(34,224,74,0.4);
+    border-radius: 3px;
+    background: linear-gradient(160deg, #0d0d0d, #050505);
+    color: #22e04a;
+    padding: 13px 16px;
+    margin: 20px 0;
+    text-decoration: none;
+    font-family: "Courier New", monospace;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 3px 10px rgba(0,0,0,0.3);
+    transition: box-shadow 0.15s ease;
+  }
+  .ad-banner-wide:hover{ box-shadow: 0 2px 4px rgba(0,0,0,0.35), 0 6px 16px rgba(0,0,0,0.4); }
+  .ad-banner-wide .abw-label{
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: #7be08f;
+    border: 1px solid rgba(123,224,143,0.5);
+    border-radius: 2px;
+    padding: 1px 4px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  .ad-banner-wide .abw-main{ font-size: 13px; font-weight: bold; letter-spacing: 0.02em; display: flex; align-items: center; gap: 8px; }
+  .ad-banner-wide .abw-main svg{ width: 15px; height: 15px; flex: none; }
+  .ad-banner-wide .abw-sub{ font-size: 10px; color: #7be08f; margin-top: 4px; }
+  .ad-banner-wide .abw-domain{ font-size: 9px; color: #5fae70; margin-top: 3px; }
+  .ad-banner-wide .abw-cta{
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #041604;
+    background: #22e04a;
+    border-radius: 2px;
+    padding: 6px 12px;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+
+  .site-footer{
+    margin-top: auto;
+    border-top: 2px solid var(--ink);
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 10.5px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 760px){
+    .newsbox{ order: 3; flex: 1 1 100%; }
+    .sidebar{ order: 2; flex: 1 1 100%; }
+    .main{ order: 1; flex: 1 1 100%; }
+    .util{ text-align: left; }
+  }
+
+  /* ---- category gallery pages ---- */
+  .gallery-page{ max-width: 640px; margin: 0 auto; padding: 22px 18px 44px; }
+  .gallery-back{ font-size: 11.5px; text-decoration: underline; display: inline-block; margin-bottom: 16px; }
+  .gallery-page h1{ font-size: 20px; margin: 0 0 4px; }
+  .gallery-page .gsub{ font-size: 12px; color: var(--ink-soft); margin: 0 0 18px; }
+  .gallery-main{ position: relative; border: 1px solid var(--line); background: var(--panel); }
+  .gallery-main .gimg-link{ display: block; }
+  .gallery-main img{ display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: #eee; }
+  .gallery-caption{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    font-size: 11.5px;
+    border-top: 1px solid var(--line);
+    background: #fff;
+  }
+  .gallery-caption .cinfo{ display: flex; align-items: baseline; gap: 8px; min-width: 0; overflow: hidden; }
+  .gallery-caption .cname{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .gallery-caption .cprice{ font-weight: bold; color: var(--ink); flex: none; }
+  .gallery-caption a{ text-decoration: underline; white-space: nowrap; flex: none; }
+  .gallery-nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; height: 30px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--line);
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .gallery-nav.prev{ left: 8px; }
+  .gallery-nav.next{ right: 8px; }
+  .gallery-thumbs{ display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .gallery-thumbs button{
+    width: 46px; height: 46px;
+    padding: 0;
+    border: 1px solid var(--line);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .gallery-thumbs button.active{ opacity: 1; border-color: var(--ink); }
+</style>
+
+<div class="site-header">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L14.9 9.1L24 12L14.9 14.9L12 24L9.1 14.9L0 12L9.1 9.1Z"/></svg>
+    <div class="brand-text">
+      <div class="name">4080SUPER</div>
+      <div class="sub">streetwear &middot; tech &middot; rare archive</div>
+    </div>
+  </div>
+
+  <div class="searchwrap">
+    <span class="lbl">Browse:</span>
+    <form action="https://www.depop.com/4080super/" target="_blank">
+      <input type="text" placeholder="Search the archive&hellip;" aria-label="Search">
+      <button type="submit">Go</button>
+    </form>
+  </div>
+
+  <div class="util">
+    <div class="row"><span>Cart 0</span><span>Saved 0</span></div>
+    <div class="row">Hi, shopper &middot; <a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Depop &#8594;</a></div>
+  </div>
+</div>
+
+<div class="layout" id="view-home" data-view="home">
+
+  <div class="sidebar">
+    <div class="box-title">Shop by category</div>
+    <ul class="cat-list">
+      <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Y2K</a></li>
+      <li><a href="#streetwear" data-view-link="streetwear">Streetwear</a></li>
+      <li><a href="#denim" data-view-link="denim">Denim</a></li>
+      <li><a href="#sneakers" data-view-link="sneakers">Sneakers</a></li>
+      <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Accessories</a></li>
+      <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Tech</a></li>
+      <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">One-offs</a></li>
+    </ul>
+
+    <div class="box-title">Where to buy</div>
+    <ul class="shop-list">
+      <li><span><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Depop</a></span><span class="on">online</span></li>
+      <li><span><a href="https://www.ebay.com/usr/4080super" target="_blank" rel="noopener">eBay</a></span><span class="on">online</span></li>
+    </ul>
+
+    <a class="contact-box" href="https://www.instagram.com/4080super" target="_blank" rel="noopener">
+      <div class="contact-box-title">Questions? Want something specific?</div>
+      <div class="contact-box-sub">DM us on Instagram &mdash; @4080super</div>
+      <div class="contact-box-cta">Message us &#8594;</div>
+    </a>
+
+    <div class="ad-stack">
+      <a class="ad-box ad-chrome-hearts" href="https://www.depop.com/4080super/" target="_blank" rel="noopener sponsored">
+        <span class="ad-label">Ad &#9662;</span>
+        <div class="ad-head">
+          <svg class="ad-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2h4v6h6v4h-6v10h-4V12H4V8h6z"/></svg>
+          <div class="ad-logo">Chrome Hearts</div>
+        </div>
+        <div class="ad-tag">Silver, leather &amp; cross motifs &mdash; if it's in stock, it's on the rack.</div>
+        <div class="ad-domain">depop.com/4080super</div>
+        <span class="ad-cta">Shop now &#8594;</span>
+      </a>
+      <a class="ad-box ad-supreme" href="https://www.depop.com/4080super/" target="_blank" rel="noopener sponsored">
+        <span class="ad-label">Ad &#9662;</span>
+        <div class="ad-head">
+          <div class="ad-logo">Supreme</div>
+        </div>
+        <div class="ad-tag">Box logic. Restock watch. Cop before it's gone.</div>
+        <div class="ad-domain">depop.com/4080super</div>
+        <span class="ad-cta">See what's up &#8594;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="main">
+    <h1 class="shop-title">4080Super</h1>
+    <p class="tagline">A streetwear, tech, and rare-finds archive &mdash; hoodies and graphic tees sit next to sneakers, retro tech, and the odd relic nobody else has. New batches go up in small drops, never restocked. Hand-picked, one of one, gone once it's gone.</p>
+
+    <div class="grid-title">Current listings</div>
+    <div class="listing-grid" id="home-listing-grid">
+      <a class="listing" data-slot="0" target="_blank" rel="noopener">
+        <div class="thumb"><span class="tag"></span></div>
+        <div class="name"></div>
+        <div class="price"></div>
+      </a>
+      <a class="listing" data-slot="1" target="_blank" rel="noopener">
+        <div class="thumb"><span class="tag"></span></div>
+        <div class="name"></div>
+        <div class="price"></div>
+      </a>
+      <a class="listing" data-slot="2" target="_blank" rel="noopener">
+        <div class="thumb"><span class="tag"></span></div>
+        <div class="name"></div>
+        <div class="price"></div>
+      </a>
+      <a class="listing" data-slot="3" target="_blank" rel="noopener">
+        <div class="thumb"><span class="tag"></span></div>
+        <div class="name"></div>
+        <div class="price"></div>
+      </a>
+      <a class="listing" data-slot="4" target="_blank" rel="noopener">
+        <div class="thumb"><span class="tag"></span></div>
+        <div class="name"></div>
+        <div class="price"></div>
+      </a>
+      <a class="listing" data-slot="5" target="_blank" rel="noopener">
+        <div class="thumb"><span class="tag"></span></div>
+        <div class="name"></div>
+        <div class="price"></div>
+      </a>
+    </div>
+
+    <a class="ad-banner-wide" href="https://www.ebay.com/usr/4080super" target="_blank" rel="noopener sponsored">
+      <div>
+        <span class="abw-label">Ad</span>
+        <div class="abw-main">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          UNDERGROUND_MARKET.LISTINGS &mdash; ACCESS GRANTED
+        </div>
+        <div class="abw-sub">encrypted deals. no questions asked. just clothes.</div>
+        <div class="abw-domain">ebay.com/usr/4080super</div>
+      </div>
+      <span class="abw-cta">ENTER &#8594;</span>
+    </a>
+
+    <div class="section-title">About this shop</div>
+    <div class="about-copy">
+      <p>4080Super is a streetwear, tech, and rare-finds archive: vintage tees, denim, sneakers, old tech, whatever turns up on a good thrift day. Hand-picked, one of one, gone once it's gone.</p>
+    </div>
+
+    <div class="section-title">Related tags</div>
+    <div class="tag-links">
+      <a href="#streetwear" data-view-link="streetwear">Streetwear</a><span class="sep">-</span>
+      <a href="#denim" data-view-link="denim">Denim</a><span class="sep">-</span>
+      <a href="#sneakers" data-view-link="sneakers">Sneakers</a><span class="sep">-</span>
+      <a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Accessories</a><span class="sep">-</span>
+      <a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Tech</a>
+    </div>
+
+    <div class="footer-note">Photos and prices above are pulled live from tagged Depop listings and rotate through the current stock &mdash; tap any piece to view or buy it on Depop.</div>
+  </div>
+
+  <div class="newsbox">
+    <div class="box-title">Updates</div>
+    <ul class="news-list">
+      <li>New drops go up weekly, small batches only</li>
+      <li>Follow on Depop for restock alerts</li>
+      <li>DM for bundle deals on multiple pieces</li>
+      <li>Now listing on eBay too</li>
+    </ul>
+
+    <div class="ad-stack">
+      <a class="ad-box ad-amd" href="https://www.ebay.com/usr/4080super" target="_blank" rel="noopener sponsored">
+        <span class="ad-label">Ad &#9662;</span>
+        <div class="ad-head">
+          <svg class="ad-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+          <div class="ad-logo">AMD</div>
+        </div>
+        <div class="ad-tag">Upgrade your rig. Deals inside, while supplies last.</div>
+        <div class="ad-domain">ebay.com/usr/4080super</div>
+        <span class="ad-cta">Shop listings &#8594;</span>
+      </a>
+      <a class="ad-box ad-cheatengine" href="https://www.ebay.com/usr/4080super" target="_blank" rel="noopener sponsored">
+        <span class="ad-label">Ad &#9662;</span>
+        <div class="ad-head">
+          <svg class="ad-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="1.5"/><path d="M6 9l4 3-4 3M12 15h6"/></svg>
+          <div class="ad-logo">Cheat Engine</div>
+        </div>
+        <div class="ad-tag">v7.4 &mdash; totally not a virus, we promise.</div>
+        <div class="ad-domain">ebay.com/usr/4080super</div>
+        <span class="ad-cta ad-blink">&#9654; Free download &#8594;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="gallery-page" id="view-streetwear" data-view="streetwear" hidden>
+  <a class="gallery-back" href="#top" data-view-link="home">&larr; Back to 4080Super</a>
+  <h1>Streetwear</h1>
+  <p class="gsub">Pulled straight from the #streetwear listings on Depop &mdash; tap a photo to view or buy that piece.</p>
+  <div class="gallery-main" data-gallery="streetwear">
+    <a class="gimg-link" target="_blank" rel="noopener">
+      <img alt="">
+    </a>
+    <button type="button" class="gallery-nav prev" aria-label="Previous piece">&#10094;</button>
+    <button type="button" class="gallery-nav next" aria-label="Next piece">&#10095;</button>
+    <div class="gallery-caption">
+      <span class="cinfo"><span class="cname"></span><span class="cprice"></span></span>
+      <a class="cta" target="_blank" rel="noopener">View on Depop &#8594;</a>
+    </div>
+  </div>
+  <div class="gallery-thumbs" data-thumbs="streetwear"></div>
+</div>
+
+<div class="gallery-page" id="view-denim" data-view="denim" hidden>
+  <a class="gallery-back" href="#top" data-view-link="home">&larr; Back to 4080Super</a>
+  <h1>Denim</h1>
+  <p class="gsub">Pulled straight from the #denim listings on Depop &mdash; tap a photo to view or buy that piece.</p>
+  <div class="gallery-main" data-gallery="denim">
+    <a class="gimg-link" target="_blank" rel="noopener">
+      <img alt="">
+    </a>
+    <button type="button" class="gallery-nav prev" aria-label="Previous piece">&#10094;</button>
+    <button type="button" class="gallery-nav next" aria-label="Next piece">&#10095;</button>
+    <div class="gallery-caption">
+      <span class="cinfo"><span class="cname"></span><span class="cprice"></span></span>
+      <a class="cta" target="_blank" rel="noopener">View on Depop &#8594;</a>
+    </div>
+  </div>
+  <div class="gallery-thumbs" data-thumbs="denim"></div>
+</div>
+
+<div class="gallery-page" id="view-sneakers" data-view="sneakers" hidden>
+  <a class="gallery-back" href="#top" data-view-link="home">&larr; Back to 4080Super</a>
+  <h1>Sneakers</h1>
+  <p class="gsub">The current sneaker lineup from the shop &mdash; tap a photo to view or buy that pair.</p>
+  <div class="gallery-main" data-gallery="sneakers">
+    <a class="gimg-link" target="_blank" rel="noopener">
+      <img alt="">
+    </a>
+    <button type="button" class="gallery-nav prev" aria-label="Previous piece">&#10094;</button>
+    <button type="button" class="gallery-nav next" aria-label="Next piece">&#10095;</button>
+    <div class="gallery-caption">
+      <span class="cinfo"><span class="cname"></span><span class="cprice"></span></span>
+      <a class="cta" target="_blank" rel="noopener">View on Depop &#8594;</a>
+    </div>
+  </div>
+  <div class="gallery-thumbs" data-thumbs="sneakers"></div>
+</div>
+
+<div class="site-footer">
+  <span>&copy; 4080Super</span>
+  <a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">@4080super on Depop</a>
+</div>
+
+<script>
+(function(){
+  var canFine = window.matchMedia && matchMedia('(pointer: fine)').matches;
+  var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!canFine || reduced) return;
+
+  document.documentElement.classList.add('js-cursor-active');
+
+  var cursorEl = document.createElement('div');
+  cursorEl.className = 'star-cursor';
+  cursorEl.innerHTML = '<svg viewBox="0 0 24 24" fill="#1a1a1a"><path d="M12 0L14.9 9.1L24 12L14.9 14.9L12 24L9.1 14.9L0 12L9.1 9.1Z"/></svg>';
+  cursorEl.style.transform = 'translate(-9999px,-9999px)';
+  document.body.appendChild(cursorEl);
+
+  var colors = ['#b8973f', '#6a9955', '#a83c3c'];
+  var ci = 0;
+  var lastSpawn = 0;
+
+  window.addEventListener('mousemove', function(e){
+    cursorEl.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+    var now = performance.now();
+    if(now - lastSpawn > 55){
+      lastSpawn = now;
+      spawnStar(e.clientX, e.clientY);
+    }
+  }, { passive: true });
+
+  function spawnStar(x, y){
+    var s = document.createElement('span');
+    s.className = 'trail-star';
+    s.textContent = '✦';
+    s.style.color = colors[ci % colors.length];
+    ci++;
+    var scale = (0.5 + Math.random() * 0.5).toFixed(2);
+    s.style.setProperty('--x', x + 'px');
+    s.style.setProperty('--y', y + 'px');
+    s.style.setProperty('--s', scale);
+    document.body.appendChild(s);
+    setTimeout(function(){ s.remove(); }, 650);
+  }
+})();
+
+/* ---- category galleries (real photos + tags pulled from Depop) ---- */
+(function(){
+  var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var GALLERIES = {
+    streetwear: [
+      { title: "Goth Money Soulja Embroidered Hoodie", img: "images/sw1.jpg", url: "https://www.depop.com/products/anonprzxy-goth-money-soulja-embroidered-hoodie-7f3d/", price: 100.00, tag: "streetwear" },
+      { title: "When Doves Cry Black Embroidered Script Hoodie", img: "images/sw2.jpg", url: "https://www.depop.com/products/4080suner-when-doves-cry-black-embroidered-b1b0/", price: 132.00, tag: "streetwear" },
+      { title: "Maroon Vault Boy 730 Pocket Tee", img: "images/sw3.jpg", url: "https://www.depop.com/products/4080suder-maroon-vault-boy-730-pocket-8588/", price: 45.00, tag: "streetwear" },
+      { title: "Dong Feng Five Founder Tee (White)", img: "images/sw4.jpg", url: "https://www.depop.com/products/40c0super-dong-feng-five-founder-tee-11b9/", price: 200.00, tag: "streetwear" },
+      { title: "1/1 Rare Goth Money Orange Grey Colorblock Zip-Up", img: "images/sw5.jpg", url: "https://www.depop.com/products/4090super-11-rare-goth-money-orange-3b46/", price: 650.00, tag: "streetwear" },
+      { title: "Bape Brown & Beige Star Pattern Zip-Up Hoodie", img: "images/sw6.jpg", url: "https://www.depop.com/products/4080sumer-bape-brown-and-beige-star-6a73/", price: 180.00, tag: "streetwear" },
+      { title: "Burgundy Striped Polo Ralph Lauren", img: "images/sw7.jpg", url: "https://www.depop.com/products/4030super-burgundy-striped-polo-ralph-lauren-2ffa/", price: 55.00, tag: "streetwear" },
+      { title: "Very Cool Warriors Grey Graphic Tee", img: "images/sw8.jpg", url: "https://www.depop.com/products/40h0super-very-cool-warriors-grey-graphic-1884/", price: 16.00, tag: "streetwear" },
+      { title: "Primitive Purple & Black Striped Tee", img: "images/sw9.jpg", url: "https://www.depop.com/products/4080su8er-primitive-purple-and-black-striped-292a/", price: 20.00, tag: "streetwear" },
+      { title: "Cookies Grey Mesh Graphic Tee", img: "images/sw10.jpg", url: "https://www.depop.com/products/4080s6per-cookies-grey-mesh-graphic-tee-2664/", price: 14.00, tag: "streetwear" },
+      { title: "Game Over Black Long Sleeve Graphic Tee", img: "images/sw11.jpg", url: "https://www.depop.com/products/4080sup0r-game-over-black-long-sleeve-6a54/", price: 24.00, tag: "streetwear" },
+      { title: "Dusty Rose Mucha Art Graphic Tee", img: "images/sw12.jpg", url: "https://www.depop.com/products/4080super-dusty-rose-mucha-art-graphic-8479/", price: 20.00, tag: "streetwear" },
+      { title: "DemonQuest Black Long Sleeve Graphic Tee", img: "images/sw13.jpg", url: "https://www.depop.com/products/4080sup5r-demonquest-black-long-sleeve-graphic-bad3/", price: 28.00, tag: "streetwear" },
+      { title: "Cookies Black Por Vida Graphic Tee", img: "images/sw14.jpg", url: "https://www.depop.com/products/4080super-cookies-black-por-vida-graphic-c66f/", price: 18.00, tag: "streetwear" },
+      { title: "Puma Olive Green Graphic Tee", img: "images/sw15.jpg", url: "https://www.depop.com/products/40804uper-puma-olive-green-graphic-tee-ea2f/", price: 12.00, tag: "streetwear" }
+    ],
+    denim: [
+      { title: "Dark Wash Jeans with Contoured Seam Detail", img: "images/dn1.jpg", url: "https://www.depop.com/products/4080supem-dark-wash-jeans-with-contoured-718a/", price: 35.10, tag: "denim" },
+      { title: "Polo Ralph Lauren Jeans (Sullivan Slim)", img: "images/dn2.jpg", url: "https://www.depop.com/products/4080supep-polo-ralph-lauren-jeans-mens-a2ce/", price: 36.00, tag: "denim" }
+    ],
+    sneakers: [
+      { title: "Nike Air Max 97 “Halloween Slime”", img: "images/sn1.jpg", url: "https://www.depop.com/products/40r0super-nike-air-max-97-halloween-7535/", price: 210.00, tag: "sneakers" },
+      { title: "Adidas Ozrah (Black / Silver)", img: "images/sn2.jpg", url: "https://www.depop.com/products/4080skper-adidas-ozrah-black-silver-0ca7/", price: 130.00, tag: "sneakers" },
+      { title: "Christian Louboutin Louis Junior Spikes", img: "images/sn3.jpg", url: "https://www.depop.com/products/40z0super-christian-louboutin-louis-junior-spikes-8ad7/", price: 650.00, tag: "sneakers" },
+      { title: "Black Monogram Trainer Sneakers (LV Logo)", img: "images/sn4.jpg", url: "https://www.depop.com/products/4020super-black-monogram-trainer-sneakers-with-10d7/", price: 500.00, tag: "sneakers" },
+      { title: "Nike x Undercover Air Force 1 Low SP “Grey Fog”", img: "images/sn5.jpg", url: "https://www.depop.com/products/4080sgper-nike-x-undercover-air-force-10f1/", price: 65.00, tag: "sneakers" },
+      { title: "Osiris D3 2001 “Binary Code”", img: "images/sn6.jpg", url: "https://www.depop.com/products/4h80super-osiris-d3-2001-binary-code-c768/", price: 250.00, tag: "sneakers" },
+      { title: "Nike Travis Scott Dunks", img: "images/sn7.jpg", url: "https://www.depop.com/products/4080suped-nike-travis-scott-dunks-size-a0e8/", price: 85.00, tag: "sneakers" }
+    ]
+  };
+
+  var ALL_ITEMS = GALLERIES.streetwear.concat(GALLERIES.denim, GALLERIES.sneakers);
+
+  function formatPrice(p){
+    return (p % 1 === 0) ? ('$' + p.toFixed(0)) : ('$' + p.toFixed(2));
+  }
+
+  function strHash(s){
+    var h = 0;
+    for(var i = 0; i < s.length; i++){ h = (h * 31 + s.charCodeAt(i)) >>> 0; }
+    return h;
+  }
+
+  function priceTier(item){
+    var p = item.price;
+    if(p >= 150){
+      var hi = ['RARE', 'LTD', 'HOT'];
+      return { word: hi[strHash(item.url) % hi.length], color: 'var(--accent-3)' };
+    }
+    if(p <= 20){
+      var lo = ['STEAL', 'DEAL'];
+      return { word: lo[strHash(item.url) % lo.length], color: 'var(--accent-2)' };
+    }
+    return { word: 'NEW', color: 'var(--accent)' };
+  }
+
+  var state = {};
+
+  function buildGallery(name){
+    var items = GALLERIES[name];
+    var root = document.querySelector('.gallery-main[data-gallery="' + name + '"]');
+    var thumbsWrap = document.querySelector('.gallery-thumbs[data-thumbs="' + name + '"]');
+    if(!root || !thumbsWrap || !items || !items.length) return;
+
+    state[name] = { idx: 0, timer: null };
+
+    items.forEach(function(item, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.style.backgroundImage = 'url(' + item.img + ')';
+      b.setAttribute('aria-label', item.title);
+      b.addEventListener('click', function(){ setIndex(name, i); restartTimer(name); });
+      thumbsWrap.appendChild(b);
+    });
+
+    var prevBtn = root.querySelector('.prev');
+    var nextBtn = root.querySelector('.next');
+    if(prevBtn) prevBtn.addEventListener('click', function(){
+      setIndex(name, (state[name].idx - 1 + items.length) % items.length);
+      restartTimer(name);
+    });
+    if(nextBtn) nextBtn.addEventListener('click', function(){
+      setIndex(name, (state[name].idx + 1) % items.length);
+      restartTimer(name);
+    });
+
+    setIndex(name, 0);
+  }
+
+  function setIndex(name, i){
+    var items = GALLERIES[name];
+    var root = document.querySelector('.gallery-main[data-gallery="' + name + '"]');
+    var thumbsWrap = document.querySelector('.gallery-thumbs[data-thumbs="' + name + '"]');
+    if(!items || !items[i]) return;
+    state[name].idx = i;
+    var item = items[i];
+
+    var link = root.querySelector('.gimg-link');
+    var img = link.querySelector('img');
+    img.src = item.img;
+    img.alt = item.title;
+    link.href = item.url;
+    root.querySelector('.cname').textContent = item.title;
+    root.querySelector('.cprice').textContent = formatPrice(item.price);
+    root.querySelector('.cta').href = item.url;
+
+    var thumbBtns = thumbsWrap.querySelectorAll('button');
+    thumbBtns.forEach(function(b, bi){ b.classList.toggle('active', bi === i); });
+  }
+
+  function stopTimer(name){
+    if(state[name] && state[name].timer){ clearInterval(state[name].timer); state[name].timer = null; }
+  }
+  function startTimer(name){
+    if(reduced || !state[name]) return;
+    stopTimer(name);
+    var items = GALLERIES[name];
+    if(!items || items.length < 2) return;
+    state[name].timer = setInterval(function(){
+      setIndex(name, (state[name].idx + 1) % items.length);
+    }, 4200);
+  }
+  function restartTimer(name){ startTimer(name); }
+
+  function renderHomeSlot(el, idx){
+    var item = ALL_ITEMS[idx % ALL_ITEMS.length];
+    el.href = item.url;
+    var thumb = el.querySelector('.thumb');
+    var img = thumb.querySelector('img');
+    if(!img){
+      img = document.createElement('img');
+      img.alt = '';
+      img.loading = 'lazy';
+      thumb.appendChild(img);
+    }
+    img.src = item.img;
+    img.alt = item.title;
+    var tier = priceTier(item);
+    var tagEl = thumb.querySelector('.tag');
+    tagEl.textContent = tier.word;
+    tagEl.style.background = tier.color;
+    el.querySelector('.name').textContent = item.title;
+    el.querySelector('.price').innerHTML =
+      '<span class="amt">' + formatPrice(item.price) + '</span>' +
+      '<span class="cta-mini">View on Depop &#8594;</span>';
+  }
+
+  function initHomeGrid(){
+    var slots = document.querySelectorAll('#home-listing-grid .listing[data-slot]');
+    if(!slots.length || !ALL_ITEMS.length) return;
+    slots.forEach(function(el){
+      var slot = parseInt(el.getAttribute('data-slot'), 10) || 0;
+      var idx = (slot * 3) % ALL_ITEMS.length;
+      renderHomeSlot(el, idx);
+      el.dataset.idx = idx;
+      if(!reduced){
+        setInterval(function(){
+          var next = (parseInt(el.dataset.idx, 10) + 1) % ALL_ITEMS.length;
+          el.dataset.idx = next;
+          renderHomeSlot(el, next);
+        }, 4200 + slot * 450);
+      }
+    });
+  }
+
+  var VIEWS = ['home', 'streetwear', 'denim', 'sneakers'];
+  function showView(name){
+    if(VIEWS.indexOf(name) === -1) name = 'home';
+    VIEWS.forEach(function(v){
+      var el = document.getElementById('view-' + v);
+      if(el) el.hidden = (v !== name);
+    });
+    stopTimer('sneakers');
+    stopTimer('streetwear');
+    stopTimer('denim');
+    if(name === 'streetwear' || name === 'denim' || name === 'sneakers') startTimer(name);
+    window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('[data-view-link]') : null;
+    if(!a) return;
+    e.preventDefault();
+    var name = a.getAttribute('data-view-link');
+    history.replaceState(null, '', name === 'home' ? (location.pathname + location.search) : ('#' + name));
+    showView(name);
+  });
+
+  window.addEventListener('hashchange', function(){
+    var h = location.hash.replace('#', '');
+    showView(GALLERIES[h] ? h : 'home');
+  });
+
+  buildGallery('streetwear');
+  buildGallery('denim');
+  buildGallery('sneakers');
+  initHomeGrid();
+
+  var initial = location.hash.replace('#', '');
+  showView(GALLERIES[initial] ? initial : 'home');
+})();
+</script>
