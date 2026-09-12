@@ -15,7 +15,7 @@
   contact.querySelector('.contact-box-sub').textContent = '@4080super on Instagram';
   updates.replaceChildren();
   const note = document.createElement('li');
-  note.textContent = 'New finds whenever they turn up';
+  note.textContent = 'New finds added as they come in.';
   updates.append(note);
   const fashion = [
     ['Chrome Hearts','','chrome'],
@@ -38,7 +38,7 @@
   let paused = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const rotating = [];
   function rail(parent, entries, destination, photo) {
-    parent.querySelector('.ad-stack').remove();
+    parent.querySelector('.promo-stack').remove();
     const heading = document.createElement('div');
     heading.className = 'rail-heading';
     heading.textContent = '4080 LINK EXCHANGE';
@@ -117,23 +117,27 @@
   rail(document.querySelector('.sidebar'), fashion, depop, 'images/sw6.jpg');
   rail(document.querySelector('.newsbox'), tech, ebay, 'images/sn6.jpg');
   const clothingPhotos = [0,2,8,17,18].map(index => window.DEPOP_ITEMS[index]);
-  function photoAds(selector, items, market){
+  function productPicks(selector, items, market){
     const list = document.querySelector(selector + ' .network-list');
     list.querySelector('.photo').remove();
     const banners = Array.from(list.children);
     items.forEach((item,i) => {
       const a = document.createElement('a');
-      a.className = 'product-ad'; a.href = item.url; a.target = '_blank'; a.rel = 'noopener';
+      a.className = 'product-pick'; a.href = item.url; a.target = '_blank'; a.rel = 'noopener';
       const img = document.createElement('img'); img.src = item.img; img.alt = item.title; img.loading = 'lazy';
       const label = document.createElement('strong'); label.textContent = item.title;
       const destination = document.createElement('span'); destination.textContent = '4080SUPER / ' + market + ' >';
-      a.append(img,label,destination);
+      const badge = document.createElement('b');
+      badge.className = 'pick-badge';
+      badge.textContent = ['HOT', 'RARE', 'LTD'][i % 3];
+      badge.dataset.kind = badge.textContent.toLowerCase();
+      a.append(badge,img,label,destination);
       const anchor = banners[Math.min(i*2+1,banners.length-1)];
       anchor.after(a);
     });
   }
-  photoAds('.sidebar',clothingPhotos,'DEPOP');
-  photoAds('.newsbox',window.TECH_ITEMS,'EBAY');
+  productPicks('.sidebar',clothingPhotos,'DEPOP');
+  productPicks('.newsbox',window.TECH_ITEMS,'EBAY');
   let alternate = false;
   setInterval(() => {
     if(paused || document.hidden) return;

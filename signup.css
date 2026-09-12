@@ -1,0 +1,17 @@
+.signup-dialog{width:390px;max-width:calc(100vw - 28px);max-height:calc(100dvh - 28px);overflow:auto;padding:0;border:2px solid #171717;border-radius:0;background:#fff;color:#171717;box-shadow:5px 5px 0 #0005;font:12px Arial,sans-serif}
+.signup-dialog::backdrop{background:#0008}
+.signup-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 8px;background:#245b2b;color:#fff;font:bold 10px 'Courier New',monospace}
+.signup-close{display:grid;place-items:center;width:25px;height:25px;padding:0;flex:none;border:2px outset #ddd;background:#eee;color:#111;font:20px Arial}
+.signup-content{padding:24px}
+.signup-stamp{font:bold 9px 'Courier New',monospace;background:#e9f64c;padding:4px 5px}
+.signup-content h2{font:bold 27px Arial;margin:18px 0 9px;letter-spacing:0}
+.signup-content>p{line-height:1.6;margin:0 0 18px;color:#555}
+.signup-content form>label:first-child{display:block;font-weight:bold;font-size:11px;margin-bottom:6px}
+#signup-email{width:100%;padding:10px;border:1px solid #888;border-radius:0;font:13px Arial;background:#fff;color:#111}
+.signup-consent{display:flex;align-items:flex-start;gap:7px;font-size:10px;line-height:1.5;margin:12px 0}
+.signup-consent input{flex:none;margin:2px 0 0;accent-color:#245b2b}
+.signup-submit{width:100%;padding:10px;font:bold 12px Arial;border:1px solid #171717;border-radius:0;background:#245b2b;color:white}
+.signup-submit:disabled{background:#ddd;color:#666;border-color:#aaa}
+.signup-status{font:10px Arial;line-height:1.4;color:#666;margin:8px 0 18px}
+.signup-later,.signup-reopen{background:none;border:0;padding:0;color:#1a4fa0;text-decoration:underline;font:11px Arial;cursor:pointer}
+.signup-dialog :focus-visible{outline:2px solid #245b2b;outline-offset:3px}

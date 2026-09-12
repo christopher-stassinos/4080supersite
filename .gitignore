@@ -6,7 +6,6 @@ __pycache__/
 .env
 .env.*
 # Local-only signup draft and preview backend.
-signup.js
-signup.css
 subscribers.py
 preview_server.py
+email_server.py
