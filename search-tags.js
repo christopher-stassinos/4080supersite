@@ -1,6 +1,7 @@
 (function(root){
   var clothingTypes = [
     {match: /\b(tee|tees|t[ -]?shirts?|shirts?|jerseys?)\b/, tags: 'shirt shirts tee tees tshirt tshirts t-shirt t-shirts tops top'},
+    {match: /\blong[ -]?sleeve\b/, tags: 'shirt shirts tee tees tops top long sleeve longsleeve'},
     {match: /\bhoodies?\b/, tags: 'hoodie hoodies hooded sweatshirt sweatshirts sweater sweaters pullover tops top'},
     {match: /\bsweatshirts?\b/, tags: 'sweatshirt sweatshirts sweater sweaters pullover tops top'},
     {match: /\b(sweaters?|knit|knitwear|cardigans?)\b/, tags: 'sweater sweaters knit knitwear jumper jumpers tops top'},
