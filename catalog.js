@@ -3,173 +3,173 @@ window.DEPOP_ITEMS = [
     "title": "FTP Velour Zip-Up Track Jacket",
     "url": "https://www.depop.com/products/408csuper-ftp-velour-zip-up-track-jacket-29ec/",
     "img": "images/current-0.jpg",
-    "price": 85,
+    "price": 110.5,
     "tag": "streetwear"
   },
   {
     "title": "Vintage Anti Drug Campaign Tee",
     "url": "https://www.depop.com/products/4080ouper-vintage-anti-drug-campaign-graphic-bea6/",
     "img": "images/current-1.jpg",
-    "price": 35,
+    "price": 45.5,
     "tag": "streetwear"
   },
   {
     "title": "Sickboyrari Tee",
     "url": "https://www.depop.com/products/4080saper-sickboyrari-tee-size-l-good-4e00/",
     "img": "images/current-2.jpg",
-    "price": 135,
+    "price": 175.5,
     "tag": "streetwear"
   },
   {
     "title": "Cream Playboy Bunny Hoodie",
     "url": "https://www.depop.com/products/4v80super-cream-playboy-bunny-graphic-hoodie-5690/",
     "img": "images/current-3.jpg",
-    "price": 12,
+    "price": 15.6,
     "tag": "streetwear"
   },
   {
     "title": "Empyre Love Me Graphic Tee",
     "url": "https://www.depop.com/products/4084super-empyre-white-love-me-love-e681/",
     "img": "images/current-4.jpg",
-    "price": 16,
+    "price": 20.8,
     "tag": "streetwear"
   },
   {
     "title": "Mew Born From Pain Tee",
     "url": "https://www.depop.com/products/4080suuer-white-mew-born-from-pain-c287/",
     "img": "images/current-5.jpg",
-    "price": 40,
+    "price": 52,
     "tag": "streetwear"
   },
   {
     "title": "DemonQuest Long Sleeve Tee",
     "url": "https://www.depop.com/products/4080sup5r-demonquest-black-long-sleeve-graphic-bad3/",
     "img": "images/current-6.jpg",
-    "price": 30,
+    "price": 39,
     "tag": "streetwear"
   },
   {
     "title": "Patagonia Olive Long Sleeve Tee",
     "url": "https://www.depop.com/products/4080iuper-patagonia-olive-green-long-sleeve-2b4f/",
     "img": "images/current-7.jpg",
-    "price": 28,
+    "price": 36.4,
     "tag": "streetwear"
   },
   {
     "title": "Nike Travis Scott Dunks",
     "url": "https://www.depop.com/products/4080suped-nike-travis-scott-dunks-size-a0e8/",
     "img": "images/current-8.jpg",
-    "price": 85,
+    "price": 110.5,
     "tag": "sneakers"
   },
   {
     "title": "Black Monogram Trainer Sneakers",
     "url": "https://www.depop.com/products/4020super-black-monogram-trainer-sneakers-with-10d7/",
     "img": "images/current-9.jpg",
-    "price": 500,
+    "price": 245,
     "tag": "sneakers"
   },
   {
     "title": "Outsiderz Rhinestone Black Tee",
     "url": "https://www.depop.com/products/anonproxy-outsiderz-rhinestone-black-tee-large/",
     "img": "images/current-10.jpg",
-    "price": 48,
+    "price": 78,
     "tag": "streetwear"
   },
   {
     "title": "Pumas UNAM Soccer Jersey",
     "url": "https://www.depop.com/products/anonprmxy-pumas-unam-soccer-jersey-size-3fe4/",
     "img": "images/current-11.jpg",
-    "price": 28,
+    "price": 45.5,
     "tag": "streetwear"
   },
   {
     "title": "Grey Striped Club Room Sweater",
     "url": "https://www.depop.com/products/anonpnoxy-grey-striped-club-room-sweater-3a6a/",
     "img": "images/current-12.jpg",
-    "price": 24.3,
+    "price": 31.59,
     "tag": "streetwear"
   },
   {
     "title": "Black Dickies-Style FLEX Work Pants",
     "url": "https://www.depop.com/products/4080supor-black-dickies-style-work-pants-flex-f53e/",
     "img": "images/current-13.jpg",
-    "price": 24.3,
+    "price": 31.59,
     "tag": "denim"
   },
   {
     "title": "Vintage Lust Graphic Tee",
     "url": "https://www.depop.com/products/408asuper-vintage-lust-graphic-tee-size-a699/",
     "img": "images/current-14.jpg",
-    "price": 29.7,
+    "price": 38.61,
     "tag": "streetwear"
   },
   {
     "title": "Club America Yellow Soccer Jersey",
     "url": "https://www.depop.com/products/40k0super-club-america-yellow-soccer-jersey-8d60/",
     "img": "images/current-15.jpg",
-    "price": 47.25,
+    "price": 61.43,
     "tag": "streetwear"
   },
   {
     "title": "Orange RIPNDIP Graphic Hoodie",
     "url": "https://www.depop.com/products/4080su9er-orange-ripndip-graphic-hoodie-size-e81b/",
     "img": "images/current-16.jpg",
-    "price": 38.88,
+    "price": 63.18,
     "tag": "streetwear"
   },
   {
     "title": "AONE4SURE Powerpuff Girls Jeans",
     "url": "https://www.depop.com/products/4080sup8r-aone4sure-pink-powerpuff-girls-graphic-d686/",
     "img": "images/current-17.jpg",
-    "price": 165,
+    "price": 214.5,
     "tag": "denim"
   },
   {
     "title": "Vintage Anime Graphic Jeans",
     "url": "https://www.depop.com/products/4030super-vintage-anime-graphic-jeans-size-ad60/",
     "img": "images/current-18.jpg",
-    "price": 34.56,
+    "price": 56.16,
     "tag": "denim"
   },
   {
     "title": "Black Jeans with Glitter Logo",
     "url": "https://www.depop.com/products/4080s0per-black-jeans-with-glitter-logo-79d8/",
     "img": "images/current-19.jpg",
-    "price": 36.45,
+    "price": 47.39,
     "tag": "denim"
   },
   {
     "title": "RIPNDIP Fleece Cargo Pants",
     "url": "https://www.depop.com/products/4080s0per-ripndip-colorful-fleece-cargo-pants-1b73/",
     "img": "images/current-20.jpg",
-    "price": 95,
+    "price": 123.5,
     "tag": "denim"
   },
   {
     "title": "White Outsiderz Graphic Tee",
     "url": "https://www.depop.com/products/40u0super-white-outsiderz-graphic-tee-size-6e63/",
     "img": "images/current-21.jpg",
-    "price": 45,
+    "price": 58.5,
     "tag": "streetwear"
   },
   {
     "title": "Bored Teenager Floral Hoodie",
     "url": "https://www.depop.com/products/4080siper-bored-teenager-white-floral-2c09/",
     "img": "images/current-22.jpg",
-    "price": 32.4,
+    "price": 52.65,
     "tag": "streetwear"
   },
   {
     "title": "Black Knit Anime Halo Girl Sweater",
     "url": "https://www.depop.com/products/4080supeq-black-knit-anime-halo-girl-e06f/",
     "img": "images/current-23.jpg",
-    "price": 40.5,
+    "price": 52.65,
     "tag": "streetwear"
   },
   {
     "title": "Brown Graphic Zip-Up Hoodie",
-    "price": 65,
+    "price": 84.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080supe3-brown-graphic-zip-up-hoodie-with-482c/",
     "img": "images/inventory/depop-4080supe3-brown-graphic-zip-up-hoodie-with-482c.jpg",
@@ -178,7 +178,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black and Cyan Esports Jersey",
-    "price": 35,
+    "price": 45.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4980super-black-and-cyan-esports-jersey-2e0f/",
     "img": "images/inventory/depop-4980super-black-and-cyan-esports-jersey-2e0f.jpg",
@@ -187,7 +187,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "boa Whiplash Tour Tee",
-    "price": 95,
+    "price": 123.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/408esuper-white-boa-whiplash-tour-north-bc2f/",
     "img": "images/inventory/depop-408esuper-white-boa-whiplash-tour-north-bc2f.jpg",
@@ -196,7 +196,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black Goth Money Records Tee",
-    "price": 125,
+    "price": 162.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080super-black-goth-money-records-graphic-cd94/",
     "img": "images/inventory/depop-4080super-black-goth-money-records-graphic-cd94.jpg",
@@ -205,7 +205,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "DONG FENG Five Founder Tee",
-    "price": 250,
+    "price": 325,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080super-dong-feng-five-founder-tee-9121/",
     "img": "images/inventory/depop-4080super-dong-feng-five-founder-tee-9121.jpg",
@@ -214,7 +214,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Microsoft Visual Studio 6.0 Long-Sleeve Shirt",
-    "price": 35,
+    "price": 45.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/408fsuper-white-microsoft-visual-studio-60-6a17/",
     "img": "images/inventory/depop-408fsuper-white-microsoft-visual-studio-60-6a17.jpg",
@@ -223,7 +223,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Purple Supreme Sling Backpack",
-    "price": 60,
+    "price": 78,
     "tag": "accessories",
     "url": "https://www.depop.com/products/4080duper-purple-supreme-sling-backpack-with-ddea/",
     "img": "images/inventory/depop-4080duper-purple-supreme-sling-backpack-with-ddea.jpg",
@@ -232,7 +232,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Arabic Camo Graphic Tee",
-    "price": 140,
+    "price": 182,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080suptr-white-graphic-t-shirt-with-a-0208/",
     "img": "images/inventory/depop-4080suptr-white-graphic-t-shirt-with-a-0208.jpg",
@@ -241,7 +241,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Sonic Graphic Tee",
-    "price": 30,
+    "price": 39,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080sfper-black-sonic-graphic-t-shirt-with-b944/",
     "img": "images/inventory/depop-4080sfper-black-sonic-graphic-t-shirt-with-b944.jpg",
@@ -250,7 +250,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Layered 2008 Long-Sleeve Tee",
-    "price": 145,
+    "price": 200,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/40g0super-layered-black-and-white-long-sleeve-e553/",
     "img": "images/inventory/depop-40g0super-layered-black-and-white-long-sleeve-e553.jpg",
@@ -259,7 +259,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Red Dragon Cash Tee",
-    "price": 30,
+    "price": 39,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/40o0super-red-dragon-cash-graphic-t-shirt-149a/",
     "img": "images/new-batch/dragon-cash.jpg",
@@ -267,7 +267,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Grey Gxds Baseball Jersey",
-    "price": 100,
+    "price": 130,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080seper-grey-gxds-white-button-up-baseball-6b2a/",
     "img": "images/new-batch/grey-gxds-jersey.jpg",
@@ -275,7 +275,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black Distance Pocket Tee",
-    "price": 20,
+    "price": 26,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080sup1r-black-distance-pocket-t-shirt-on-3f25/",
     "img": "images/new-batch/distance-pocket-tee.jpg",
@@ -283,7 +283,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "White Bad Kid Graphic Tee",
-    "price": 30,
+    "price": 39,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080supe2-white-graphic-t-shirt-with-small-3db3/",
     "img": "images/new-batch/white-bad-kid-tee.jpg",
@@ -291,24 +291,15 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Game Over Anime Long Sleeve",
-    "price": 40,
+    "price": 52,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080scper-black-game-over-anime-graphic-eff2/",
     "img": "images/new-batch/game-over-long-sleeve.jpg",
     "searchTags": "streetwear anime longsleeve gameover black"
   },
   {
-    "title": "Vintage Microsoft Visual Studio 6.0 COMDEX Sweep 1998 Long Sleeve",
-    "price": 35,
-    "tag": "streetwear",
-    "url": "https://www.depop.com/products/4080supe4-vintage-microsoft-visual-studio-60-1814/",
-    "img": "images/inventory/depop-4080supe4-vintage-microsoft-visual-studio-60-1814.jpg",
-    "searchTags": "streetwear microsoft visualstudio vintagecomputer comdex 1998 longsleeve white",
-    "sourceImage": "https://media-photos.depop.com/b1/43249000/4677322155_f7b8a101c6ca48669ceb0f622d763088/P2.jpg"
-  },
-  {
     "title": "Puma Olive Graphic Tee",
-    "price": 12,
+    "price": 15.6,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/40804uper-puma-olive-green-graphic-tee-ea2f/",
     "img": "images/inventory/depop-40804uper-puma-olive-green-graphic-tee-ea2f.jpg",
@@ -317,7 +308,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Cookies Por Vida Graphic Tee",
-    "price": 18,
+    "price": 23.4,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080super-cookies-black-por-vida-graphic-c66f/",
     "img": "images/inventory/depop-4080super-cookies-black-por-vida-graphic-c66f.jpg",
@@ -326,7 +317,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Mucha Art Graphic Tee",
-    "price": 20,
+    "price": 26,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080super-dusty-rose-mucha-art-graphic-8479/",
     "img": "images/inventory/depop-4080super-dusty-rose-mucha-art-graphic-8479.jpg",
@@ -335,7 +326,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Game Over Pink Graphic Long Sleeve",
-    "price": 24,
+    "price": 31.2,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080sup0r-game-over-black-long-sleeve-6a54/",
     "img": "images/inventory/depop-4080sup0r-game-over-black-long-sleeve-6a54.jpg",
@@ -344,7 +335,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Cookies Grey Mesh Tee",
-    "price": 14,
+    "price": 18.2,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080s6per-cookies-grey-mesh-graphic-tee-2664/",
     "img": "images/inventory/depop-4080s6per-cookies-grey-mesh-graphic-tee-2664.jpg",
@@ -353,7 +344,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Primitive Purple Striped Tee",
-    "price": 20,
+    "price": 26,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080su8er-primitive-purple-and-black-striped-292a/",
     "img": "images/inventory/depop-4080su8er-primitive-purple-and-black-striped-292a.jpg",
@@ -362,7 +353,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Very Cool Warriors Graphic Tee",
-    "price": 16,
+    "price": 20.8,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/40h0super-very-cool-warriors-grey-graphic-1884/",
     "img": "images/inventory/depop-40h0super-very-cool-warriors-grey-graphic-1884.jpg",
@@ -371,7 +362,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black Outsiderz Graphic Tee",
-    "price": 23.76,
+    "price": 38.61,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080s8per-black-outsiderz-graphic-tee-size-d217/",
     "img": "images/inventory/depop-4080s8per-black-outsiderz-graphic-tee-size-d217.jpg",
@@ -380,7 +371,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "AAPE x Minecraft Camo Sweatshirt",
-    "price": 100,
+    "price": 162.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080s9per-aape-x-minecraft-camo-sweatshirt-4fed/",
     "img": "images/inventory/depop-4080s9per-aape-x-minecraft-camo-sweatshirt-4fed.jpg",
@@ -389,7 +380,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black Carpenter Cargo Pants",
-    "price": 65,
+    "price": 84.5,
     "tag": "denim",
     "url": "https://www.depop.com/products/4i80super-black-carpenter-cargo-pants-size-638a/",
     "img": "images/inventory/depop-4i80super-black-carpenter-cargo-pants-size-638a.jpg",
@@ -398,7 +389,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Evangelion Graphic Hoodie",
-    "price": 36.72,
+    "price": 59.67,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080suptr-evangelion-graphic-hoodie-size-l-0d09/",
     "img": "images/inventory/depop-4080suptr-evangelion-graphic-hoodie-size-l-0d09.jpg",
@@ -407,7 +398,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Navy Polo Ralph Lauren Shirt",
-    "price": 50,
+    "price": 40,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/40a0super-navy-polo-ralph-lauren-shirt-d5ba/",
     "img": "images/inventory/depop-40a0super-navy-polo-ralph-lauren-shirt-d5ba.jpg",
@@ -416,7 +407,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black Baggy Curved-Seam Jeans",
-    "price": 28.08,
+    "price": 45.63,
     "tag": "denim",
     "url": "https://www.depop.com/products/40v0super-black-baggy-denim-jeans-with-11d3/",
     "img": "images/inventory/depop-40v0super-black-baggy-denim-jeans-with-11d3.jpg",
@@ -425,7 +416,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "ASSPIZZA/BABBIT 730 Eevee Long Sleeve",
-    "price": 52,
+    "price": 84.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080supea-asspizzababbit-730-grey-eevee-graphic-fe23/",
     "img": "images/inventory/depop-4080supea-asspizzababbit-730-grey-eevee-graphic-fe23.jpg",
@@ -434,7 +425,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Dark Wash Contoured-Seam Jeans",
-    "price": 35.1,
+    "price": 45.63,
     "tag": "denim",
     "url": "https://www.depop.com/products/4080supem-dark-wash-jeans-with-contoured-718a/",
     "img": "images/inventory/depop-4080supem-dark-wash-jeans-with-contoured-718a.jpg",
@@ -442,17 +433,8 @@ window.DEPOP_ITEMS = [
     "sourceImage": "https://media-photos.depop.com/r1/43249000/4571547233_9d98016476ee4eb88167c43dc0d2ed24/P0.jpg"
   },
   {
-    "title": "Goth Money Soulja Embroidered Hoodie",
-    "price": 100,
-    "tag": "streetwear",
-    "url": "https://www.depop.com/products/anonprzxy-goth-money-soulja-embroidered-hoodie-7f3d/",
-    "img": "images/inventory/depop-anonprzxy-goth-money-soulja-embroidered-hoodie-7f3d.jpg",
-    "searchTags": "ftp gothmoney soulja embroidered hoodie",
-    "sourceImage": "https://media-photos.depop.com/r1/43249000/4570858971_076f36ec4e7a4c0580bb81c0c8d4771e/P0.jpg"
-  },
-  {
     "title": "When Doves Cry Embroidered Hoodie",
-    "price": 132,
+    "price": 214.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080suner-when-doves-cry-black-embroidered-b1b0/",
     "img": "images/inventory/depop-4080suner-when-doves-cry-black-embroidered-b1b0.jpg",
@@ -461,7 +443,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Polo Ralph Lauren Sullivan Slim Jeans",
-    "price": 36,
+    "price": 58.5,
     "tag": "denim",
     "url": "https://www.depop.com/products/4080supep-polo-ralph-lauren-jeans-mens-a2ce/",
     "img": "images/inventory/depop-4080supep-polo-ralph-lauren-jeans-mens-a2ce.jpg",
@@ -470,7 +452,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Maroon Vault Boy 730 Pocket Tee",
-    "price": 45,
+    "price": 58.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080suder-maroon-vault-boy-730-pocket-8588/",
     "img": "images/inventory/depop-4080suder-maroon-vault-boy-730-pocket-8588.jpg",
@@ -479,7 +461,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "White DONG FENG Five Founder Tee",
-    "price": 200,
+    "price": 325,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/40c0super-dong-feng-five-founder-tee-11b9/",
     "img": "images/inventory/depop-40c0super-dong-feng-five-founder-tee-11b9.jpg",
@@ -488,7 +470,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Goth Money 1/1 Colorblock Zip Hoodie",
-    "price": 650,
+    "price": 845,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4090super-11-rare-goth-money-orange-3b46/",
     "img": "images/inventory/depop-4090super-11-rare-goth-money-orange-3b46.jpg",
@@ -497,7 +479,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Bape Star Pattern Zip Hoodie",
-    "price": 180,
+    "price": 292.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080sumer-bape-brown-and-beige-star-6a73/",
     "img": "images/inventory/depop-4080sumer-bape-brown-and-beige-star-6a73.jpg",
@@ -506,7 +488,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Burgundy Striped Polo Ralph Lauren",
-    "price": 55,
+    "price": 71.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4030super-burgundy-striped-polo-ralph-lauren-2ffa/",
     "img": "images/inventory/depop-4030super-burgundy-striped-polo-ralph-lauren-2ffa.jpg",
@@ -515,7 +497,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Nike Air Max 97 Halloween Slime",
-    "price": 210,
+    "price": 273,
     "tag": "sneakers",
     "url": "https://www.depop.com/products/40r0super-nike-air-max-97-halloween-7535/",
     "img": "images/inventory/depop-40r0super-nike-air-max-97-halloween-7535.jpg",
@@ -524,7 +506,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Adidas Ozrah Black / Silver",
-    "price": 130,
+    "price": 169,
     "tag": "sneakers",
     "url": "https://www.depop.com/products/4080skper-adidas-ozrah-black-silver-0ca7/",
     "img": "images/inventory/depop-4080skper-adidas-ozrah-black-silver-0ca7.jpg",
@@ -533,7 +515,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Christian Louboutin Louis Junior Spikes",
-    "price": 650,
+    "price": 235,
     "tag": "sneakers",
     "url": "https://www.depop.com/products/40z0super-christian-louboutin-louis-junior-spikes-8ad7/",
     "img": "images/inventory/depop-40z0super-christian-louboutin-louis-junior-spikes-8ad7.jpg",
@@ -542,7 +524,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Nike x UNDERCOVER Air Force 1 Grey Fog",
-    "price": 65,
+    "price": 84.5,
     "tag": "sneakers",
     "url": "https://www.depop.com/products/4080sgper-nike-x-undercover-air-force-10f1/",
     "img": "images/inventory/depop-4080sgper-nike-x-undercover-air-force-10f1.jpg",
@@ -551,7 +533,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Osiris D3 2001 Binary Code",
-    "price": 250,
+    "price": 325,
     "tag": "sneakers",
     "url": "https://www.depop.com/products/4h80super-osiris-d3-2001-binary-code-c768/",
     "img": "images/inventory/depop-4h80super-osiris-d3-2001-binary-code-c768.jpg",
@@ -560,7 +542,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Skepta x Nike Air Max Tailwind V Bloody Chrome",
-    "price": 300,
+    "price": 390,
     "tag": "sneakers",
     "url": "https://www.depop.com/products/4080sjper-skepta-x-nike-air-max-70a2/",
     "img": "images/inventory/depop-4080sjper-skepta-x-nike-air-max-70a2.jpg",
@@ -569,7 +551,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Lurking Class Windbreaker Jacket",
-    "price": 65,
+    "price": 84.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/4080s7per-lurking-class-windbreaker-jacket-size-ce0e/",
     "img": "images/inventory/depop-4080s7per-lurking-class-windbreaker-jacket-size-ce0e.jpg",
@@ -578,7 +560,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black Columbia Rain Jacket",
-    "price": 20,
+    "price": 32.5,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/an9nproxy-black-columbia-rain-jacket-size-a630/",
     "img": "images/inventory/depop-an9nproxy-black-columbia-rain-jacket-size-a630.jpg",
@@ -587,7 +569,7 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Green 7-Eleven Work Jacket",
-    "price": 51.3,
+    "price": 66.69,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/anznproxy-green-7-eleven-work-jacket-size-34c1/",
     "img": "images/inventory/depop-anznproxy-green-7-eleven-work-jacket-size-34c1.jpg",
@@ -596,11 +578,218 @@ window.DEPOP_ITEMS = [
   },
   {
     "title": "Black FTP FTC Anorak Jacket",
-    "price": 51.84,
+    "price": 84.24,
     "tag": "streetwear",
     "url": "https://www.depop.com/products/anonyroxy-black-ftp-ftc-anorak-jacket-36d2/",
     "img": "images/inventory/depop-anonyroxy-black-ftp-ftc-anorak-jacket-36d2.jpg",
     "searchTags": "ftp ftc anorak jacket black",
     "sourceImage": "https://media-photos.depop.com/r1/43249000/4570815968_34f29cee7a8a4e29aa09c949fbe86c55/P0.jpg"
+  },
+  {
+    "title": "Black Embroidered Revenge-Style Jeans",
+    "price": 45,
+    "tag": "denim",
+    "url": "https://www.depop.com/products/40802uper-black-embroidered-revenge-style-jeans-with-b404/",
+    "img": "images/inventory/depop-b404.jpg",
+    "searchTags": "black jeans embroidered streetwear denim revenge straight leg waist 32",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4678735812_0c368cee267646ce85e5101d0729d313/P0.jpg"
+  },
+  {
+    "title": "Cream Graphic Tee",
+    "price": 30,
+    "tag": "streetwear",
+    "url": "https://www.depop.com/products/4b80super-cream-graphic-tee-with-front-4608/",
+    "img": "images/inventory/depop-4608.jpg",
+    "searchTags": "shirt t-shirt tee cream tan small",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4678613193_e504a50e14224acf815a9d1b7b8faabe/P0.jpg"
+  },
+  {
+    "title": "FTP Repeated Letter Face Covering",
+    "price": 80,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/40e0super-ftp-full-face-covering-with-d4b2/",
+    "img": "images/inventory/depop-d4b2.jpg",
+    "searchTags": "mask balaclava ski mask face covering black navy",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4682463228_76626f5e7b8841f4ba29e180d172f705/P0.jpg"
+  },
+  {
+    "title": "Lacoste Burgundy Camera Bag",
+    "price": 71.5,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/4080supeu-lacoste-vertical-camera-bag-in-79bb/",
+    "img": "images/inventory/depop-79bb.jpg",
+    "searchTags": "bag accessory crossbody camera burgundy red new with tags",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4679701172_229189c7c4104b0c93136c127e6e9826/P0.jpg"
+  },
+  {
+    "title": "White Nike Strap High-Top Sneakers",
+    "price": 52,
+    "tag": "sneakers",
+    "url": "https://www.depop.com/products/4080quper-white-nike-high-top-sneakers-with-fbca/",
+    "img": "images/inventory/depop-fbca.jpg",
+    "searchTags": "shoes trainers high top white grey swoosh strap women size 9",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4679686094_786872591de041aaa1fdfc683656a861/P0.jpg"
+  },
+  {
+    "title": "Grey Nike Gum-Sole Skate Sneakers",
+    "price": 39,
+    "tag": "sneakers",
+    "url": "https://www.depop.com/products/40800uper-grey-nike-low-top-skate-sneakers-78a3/",
+    "img": "images/inventory/depop-78a3.jpg",
+    "searchTags": "shoes trainers skate low top grey gum soles size 9",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4681238981_67eb4cf6dfce47b1add8d31d1eac2a36/P0.jpg"
+  },
+  {
+    "title": "AND1 Tai Chi 2.0 Basketball Shoes",
+    "price": 45.5,
+    "tag": "sneakers",
+    "url": "https://www.depop.com/products/4080s9per-and1-tai-chi-20-basketball-c5e9/",
+    "img": "images/inventory/depop-c5e9.jpg",
+    "searchTags": "sneakers trainers basketball black white purple size 9",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4679692332_0b70cbb0de9c4993becd39ff1a030b4e/P0.jpg"
+  },
+  {
+    "title": "Empyre Strike In Silence Tee",
+    "price": 32.5,
+    "tag": "streetwear",
+    "url": "https://www.depop.com/products/4780super-empyre-cream-graphic-t-shirt-size-e54b/",
+    "img": "images/inventory/depop-e54b.jpg",
+    "searchTags": "shirt t-shirt cream knight globe cotton large",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4678815875_f979c73d4f1f496c85a7b95f054a847f/P0.jpg"
+  },
+  {
+    "title": "Black Dickies Straight-Leg Work Pants",
+    "price": 36.4,
+    "tag": "streetwear",
+    "url": "https://www.depop.com/products/4080tuper-black-dickies-work-pants-with-4233/",
+    "img": "images/inventory/depop-4233.jpg",
+    "searchTags": "trousers pants dickies workwear blackpants streetwear menswear waist 30",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4678736848_0adaa52b90b242659f7536415d658927/P0.jpg"
+  },
+  {
+    "title": "IZOD Advantage Performance Navy Polo",
+    "price": 26,
+    "tag": "streetwear",
+    "url": "https://www.depop.com/products/4080supen-izod-advantage-performance-navy-short-f121/",
+    "img": "images/inventory/depop-f121.jpg",
+    "searchTags": "polo shirt short sleeve menswear classicstyle preppy medium",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4678604679_55d4a9238cc94f64a27361195a368e27/P0.jpg"
+  },
+  {
+    "title": "Black and Red Shield Patch Cap",
+    "price": 32.5,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/4080supwr-black-and-red-cap-with-1c4f/",
+    "img": "images/inventory/depop-1c4f.jpg",
+    "searchTags": "hat cap accessory embroidered yellow shield italian",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4682369987_28b10e4696304164b773550cbc07b52f/P0.jpg"
+  },
+  {
+    "title": "Black Nike Utility-Strap High-Tops",
+    "price": 58.5,
+    "tag": "sneakers",
+    "url": "https://www.depop.com/products/4080siper-black-nike-high-top-sneakers-with-7182/",
+    "img": "images/inventory/depop-7182.jpg",
+    "searchTags": "shoes trainers sneakers high top leather strap size 9",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4679683118_1a076a7f428741a59a3eb3cdb03b35b4/P0.jpg"
+  },
+  {
+    "title": "Primitive Black and Purple Striped Tee",
+    "price": 31.2,
+    "tag": "streetwear",
+    "url": "https://www.depop.com/products/4080supbr-primitive-black-and-purple-striped-de03/",
+    "img": "images/inventory/depop-de03.jpg",
+    "searchTags": "shirt t-shirt stripedtee streetwear skatewear menswear large",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4678598050_6fea90e37f794e338157e78cedc715a8/P0.jpg"
+  },
+  {
+    "title": "Red Supreme Sling Bag",
+    "price": 39,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/4085super-red-supreme-sling-bag-with-727b/",
+    "img": "images/inventory/depop-727b.jpg",
+    "searchTags": "bag accessory sling crossbody adjustable strap red",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4677329062_b30f95209c3544f29f4af47359a4b27f/P0.jpg"
+  },
+  {
+    "title": "Black New Balance Skate Sneakers",
+    "price": 26,
+    "tag": "sneakers",
+    "url": "https://www.depop.com/products/4080iuper-black-new-balance-skate-sneakers-f17c/",
+    "img": "images/inventory/depop-f17c.jpg",
+    "searchTags": "shoes trainers skate teal red size 9",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4681164790_c95e91dde456474ab704531ed69503e6/P0.jpg"
+  },
+  {
+    "title": "Grey Camo Graffiti Beanie",
+    "price": 58.5,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/4080supyr-gray-and-white-camouflage-beanie-d275/",
+    "img": "images/inventory/depop-d275.jpg",
+    "searchTags": "hat beanie camo camouflage graffiti accessory gray white",
+    "sourceImage": "https://media-photos.depop.com/r1/43249000/4682377828_4480f0ff6aa94c87b09ff2feff7596fe/P0.jpg"
+  },
+  {
+    "title": "Caterpillar Black Short-Sleeve Shirt",
+    "price": 33.8,
+    "tag": "streetwear",
+    "url": "https://www.depop.com/products/4080supeh-caterpillar-black-short-sleeve-button-up-94d1/",
+    "img": "images/inventory/depop-94d1.jpg",
+    "searchTags": "buttonup button up workwear menswear blackshirt small chest pockets",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4678609780_0ee8c5d5ce924b25ada3a18e7911365a/P0.jpg"
+  },
+  {
+    "title": "Blue Eyedress Graphic Tee",
+    "price": 26,
+    "tag": "streetwear",
+    "url": "https://www.depop.com/products/4080suptr-blue-eyedress-graphic-t-shirt-with-0c67/",
+    "img": "images/inventory/depop-0c67.jpg",
+    "searchTags": "shirt t-shirt tee blue cartoon dog large",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4677343872_db7a73f77cce401aa093a142583bf051/P0.jpg"
+  },
+  {
+    "title": "Black Adidas Slip-On High-Tops",
+    "price": 39,
+    "tag": "sneakers",
+    "url": "https://www.depop.com/products/4080supe6-black-adidas-slip-on-high-top-sneakers-9e3a/",
+    "img": "images/inventory/depop-9e3a.jpg",
+    "searchTags": "shoes trainers sneakers slip on high top size 9",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4681237907_33474041d2774ddfa81df9b8de67e16e/P0.jpg"
+  },
+  {
+    "title": "Offwhite Arrow Canvas Sneakers",
+    "price": 23.4,
+    "tag": "sneakers",
+    "url": "https://www.depop.com/products/4i80super-offwhite-low-top-canvas-sneakers-with-0e94/",
+    "img": "images/inventory/depop-0e94.jpg",
+    "searchTags": "shoes trainers low top canvas pink arrow distressed size 9",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4679695791_8ceb3f63cf7e422fa8f922a8bb3547b3/P0.jpg"
+  },
+  {
+    "title": "Pink OFWGKTA Donut Cap",
+    "price": 45.5,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/4080supet-pink-adjustable-cap-with-embroidered-6af0/",
+    "img": "images/inventory/depop-6af0.jpg",
+    "searchTags": "hat cap accessory adjustable embroidered donut odd future",
+    "sourceImage": "https://media-photos.depop.com/b1/43249000/4682368878_e0fbdf91446b4b728f923eaef13f3f63/P0.jpg"
+  },
+  {
+    "title": "Black FTP All-Over Print Face Covering",
+    "price": 156,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/40c0super-black-face-covering-with-all-over-37c6/",
+    "img": "images/inventory/depop-37c6.jpg",
+    "searchTags": "mask balaclava ski mask face covering accessory ftp",
+    "sourceImage": "https://media-photos.depop.com/r1/43249000/4682367446_c8fc3388eb3c4b3a9ce1485de96eecc9/P0.jpg"
+  },
+  {
+    "title": "Black Floral Mesh-Eye Face Covering",
+    "price": 84.5,
+    "tag": "accessories",
+    "url": "https://www.depop.com/products/408fsuper-black-floral-print-face-covering-with-ae2c/",
+    "img": "images/inventory/depop-ae2c.jpg",
+    "searchTags": "mask balaclava ski mask face covering floral mesh accessory",
+    "sourceImage": "https://media-photos.depop.com/r1/43249000/4682364163_62d654dc0c044b5f8c9f27de0a2db530/P0.jpg"
   }
 ];

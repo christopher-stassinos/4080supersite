@@ -153,12 +153,30 @@ window.TECH_ITEMS = [
     "sourceImage": "https://i.ebayimg.com/images/g/ZzcAAeSwuqxqpeHM/s-l500.webp"
   },
   {
-    "title": "AMD Radeon VII Graphics Card",
-    "price": 270,
+    "title": "AMD Radeon VII 16GB HBM2 Graphics Card",
+    "price": 500,
     "tag": "tech",
     "url": "https://www.ebay.com/itm/188918526892",
-    "img": "images/inventory/ebay-188918526892.webp",
-    "searchTags": "gpu graphics video card computer hardware Radeon VII",
-    "sourceImage": "https://i.ebayimg.com/images/g/AmsAAeSwrWpqlIa7/s-l500.webp"
+    "img": "images/inventory/ebay-188918526892-sep13.webp",
+    "searchTags": "AMD Radeon VII 16GB HBM2 Graphics Card gpu graphics video card hardware",
+    "sourceImage": "https://i.ebayimg.com/images/g/LPUAAeSwPn5qphyM/s-l300.webp"
+  },
+  {
+    "title": "NVIDIA GeForce RTX 2080 Ti Founders Edition 11GB Graphics Card",
+    "price": 650,
+    "tag": "tech",
+    "url": "https://www.ebay.com/itm/188923854563",
+    "img": "images/inventory/ebay-188923854563-sep13.webp",
+    "sourceImage": "https://i.ebayimg.com/images/g/9RYAAeSwukpqpjuq/s-l300.webp",
+    "searchTags": "NVIDIA GeForce RTX 2080 Ti Founders Edition 11GB Graphics Card gpu graphics video card hardware"
+  },
+  {
+    "title": "Aliphone NVIDIA RTX 3080M 8GB Graphics Card",
+    "price": 570,
+    "tag": "tech",
+    "url": "https://www.ebay.com/itm/188923854986",
+    "img": "images/inventory/ebay-188923854986-sep13.webp",
+    "sourceImage": "https://i.ebayimg.com/images/g/~d8AAeSwUuBqpj0Y/s-l300.webp",
+    "searchTags": "Aliphone NVIDIA RTX 3080M 8GB Graphics Card gpu graphics video card hardware"
   }
 ];
