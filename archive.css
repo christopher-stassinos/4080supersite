@@ -91,8 +91,9 @@ html body .box-title,html body .grid-title{letter-spacing:0}
 .brand-chrome .brand-destination{position:relative;white-space:nowrap;font-size:7px}
 .net-banner.brand-supreme{background:#e7192d}
 .brand-supreme strong{font:bold italic 32px Arial}
-.net-banner.brand-hellstar{background:#101010;color:#fff;border:1px solid #666;box-shadow:2px 2px #bbb;padding:16px 10px}
-.brand-hellstar strong{font:italic 900 25px Impact,'Arial Black',sans-serif;line-height:1;transform:rotate(-4deg);text-shadow:1px 1px #a31c22;white-space:nowrap}
+.net-banner.brand-audemars{background:#143c31;color:#fff;border:1px solid #666;box-shadow:2px 2px #bbb;padding:16px 10px}
+.brand-audemars strong{display:none}
+.brand-banner.brand-audemars .brand-logo{width:100%;max-width:155px;height:50px;object-fit:contain;filter:brightness(0) invert(1)}
 .net-banner.brand-goth{background:#050505;color:#f2f2ed;border:1px solid #666;box-shadow:2px 2px #bbb;padding:16px 12px}
 .brand-goth strong{font:700 27px ArchiveBlackletter,serif;line-height:1.05;text-shadow:none;max-width:130px;text-transform:capitalize}
 .net-banner.brand-bape{background:repeating-linear-gradient(125deg,#2a3627 0 22px,#495035 22px 48px,#1d271e 48px 58px);color:#fff4cb}
@@ -219,6 +220,9 @@ html body .artifact-player{width:320px;max-width:calc(100vw - 24px);background:#
 .brand-tradeogre strong{display:none}
 .net-banner.brand-tradeogre{height:230px;background:#202020;gap:0;padding:16px 8px}
 .tradeogre-emblem{width:140px;height:118px;object-fit:contain;flex:none}
+.hack-planet{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#88ef9b;transform:skew(-7deg);font:900 32px/.88 Impact,'Arial Black',sans-serif;letter-spacing:0;text-shadow:2px 2px #102d1a}
+.hack-planet span:nth-child(2){font:700 10px/1.8 'Courier New',monospace;color:#d6ffe0}
+.hack-planet span:last-child{font-size:29px}
 .tradeogre-wordmark{width:160px;max-width:100%;height:82px;object-fit:contain;clip-path:inset(6px 0 0);flex:none}
 .brand-tradeogre small{display:none}
 .shop-alert{margin:18px 0 0;border:0;background:#fff;box-shadow:none}

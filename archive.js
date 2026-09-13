@@ -21,7 +21,7 @@
   const fashion = [
     ['Chrome Hearts','','chrome'],
     ['Supreme','','supreme'],
-    ['HELLSTAR','','hellstar'],
+    ['AUDEMARS PIGUET','','audemars','audemars-piguet.png'],
     ['Goth Money','','goth'],
     ['FTP','','ftp','ftp.png'],
     ['Maison Margiela','','margiela','margiela'],
@@ -59,7 +59,7 @@
       a.href = destination; a.target = '_blank'; a.rel = 'noopener';
       a.title = 'Browse 4080Super on ' + (destination === depop ? 'Depop' : 'eBay');
       a.className = 'net-banner brand-banner brand-' + entry[2];
-      if (['chrome', 'supreme', 'hellstar', 'palmangels', 'tradeogre', 'claude'].includes(entry[2])) a.classList.add('mobile-feature');
+      if (['chrome', 'supreme', 'audemars', 'palmangels', 'tradeogre', 'claude'].includes(entry[2])) a.classList.add('mobile-feature');
       a.setAttribute('aria-label', entry[0] + ' / 4080Super on ' + (destination === depop ? 'Depop' : 'eBay'));
       if(entry[3]) {
         const logo = document.createElement('img');
@@ -70,9 +70,13 @@
       }
       const strong = document.createElement('strong'); strong.textContent = entry[0];
       if(entry[2] === 'tradeogre') {
-        const emblem = document.createElement('img');
-        emblem.src = 'images/brands/tradeogre-emblem.png';
-        emblem.alt = ''; emblem.className = 'tradeogre-emblem';
+        const emblem = document.createElement('span');
+        emblem.className = 'tradeogre-emblem hack-planet';
+        emblem.setAttribute('aria-label', 'Hack the Planet');
+        const hack = document.createElement('span'); hack.textContent = 'HACK';
+        const the = document.createElement('span'); the.textContent = 'THE';
+        const planet = document.createElement('span'); planet.textContent = 'PLANET';
+        emblem.append(hack, the, planet);
         const wordmark = document.createElement('img');
         wordmark.src = 'images/brands/tradeogre-wordmark.png';
         wordmark.alt = 'TradeOgre'; wordmark.className = 'tradeogre-wordmark';
@@ -118,7 +122,7 @@
   }
   rail(document.querySelector('.sidebar'), fashion, depop, 'images/sw6.jpg');
   rail(document.querySelector('.newsbox'), tech, ebay, 'images/sn6.jpg');
-  const clothingPhotos = [0,2,8,17,18].map(index => window.DEPOP_ITEMS[index]);
+  const clothingPhotos = [0,2,8].map(index => window.DEPOP_ITEMS[index]).filter(Boolean);
   function productPicks(selector, items, market){
     const list = document.querySelector(selector + ' .network-list');
     list.querySelector('.photo').remove();
@@ -136,11 +140,14 @@
       badge.hidden = !badge.textContent;
       a.append(badge,img,label,destination);
       const anchor = banners[Math.min(i*2+1,banners.length-1)];
-      anchor.after(a);
+      anchor.before(a);
     });
   }
   productPicks('.sidebar',clothingPhotos,'DEPOP');
-  productPicks('.newsbox',window.TECH_ITEMS,'EBAY');
+    const hardwarePhotos = [/graphics card/i, /\bRAM\b/i, /\bSSD\b/i]
+      .map(type => window.TECH_ITEMS.find(item => type.test(item.title)))
+      .filter(Boolean);
+    productPicks('.newsbox',hardwarePhotos,'EBAY');
   let alternate = false;
   setInterval(() => {
     if(paused || document.hidden) return;
