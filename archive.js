@@ -165,11 +165,18 @@
   document.querySelector('.newsbox').prepend(chat);
   const status = chat.querySelector('#chat-status'), form = chat.querySelector('form'), log = chat.querySelector('.chat-log'), button = form.querySelector('button');
   const chatOrigin = ['127.0.0.1','localhost'].includes(location.hostname) ? '' : 'https://4080-email-queue.email-queue.workers.dev';
-  const stream = new EventSource(chatOrigin + '/chat/events');
-  stream.onopen = () => {status.textContent = 'live';button.disabled = false;};
-  stream.onerror = () => {status.textContent = 'reconnecting';button.disabled = true;};
-  stream.onmessage = event => {
-    const data = JSON.parse(event.data);
+  let seen = 0;
+  const poll = async () => {
+    try {
+      const response = await fetch(chatOrigin + '/chat/recent');
+      if(!response.ok) throw new Error('Chat unavailable');
+      const data = await response.json();
+      status.textContent = 'live'; button.disabled = false;
+      for(const message of data.messages.slice(seen)) addMessage(message);
+      seen = data.messages.length;
+    } catch { status.textContent = 'reconnecting'; button.disabled = true; }
+  };
+  const addMessage = data => {
     if(log.firstChild?.textContent === 'Room is quiet.') log.replaceChildren();
     const row = document.createElement('p'), nick = document.createElement('b');
     nick.textContent = data.nick + ': ';
@@ -179,6 +186,7 @@
     log.scrollTop = log.scrollHeight;
     setTimeout(() => row.remove(), 300000);
   };
+  poll(); setInterval(poll, 5000);
   form.onsubmit = async event => {
     event.preventDefault();
     if(!form.elements.nick.value.trim() || !form.elements.message.value.trim()) return;
