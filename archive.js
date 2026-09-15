@@ -164,12 +164,8 @@
   chat.innerHTML = '<div class="chat-title"><b>#4080 / chat</b><span id="chat-status">connecting</span></div><div class="chat-log" role="log" aria-live="polite"><p>Room is quiet.</p></div><form><input name="nick" aria-label="Nickname" placeholder="nickname" maxlength="20" required autocomplete="off"><input name="message" aria-label="Message" placeholder="say something..." maxlength="280" required autocomplete="off"><button type="submit" disabled>Send</button></form><p class="chat-note">No accounts. No server history. Messages fade after 5 minutes. Public room; others can copy messages.</p>';
   document.querySelector('.newsbox').prepend(chat);
   const status = chat.querySelector('#chat-status'), form = chat.querySelector('form'), log = chat.querySelector('.chat-log'), button = form.querySelector('button');
-  if(!['127.0.0.1','localhost'].includes(location.hostname)) {
-    status.textContent = 'offline';
-    log.firstChild.textContent = 'Chat is not connected yet.';
-    return;
-  }
-  const stream = new EventSource('/chat/events');
+  const chatOrigin = ['127.0.0.1','localhost'].includes(location.hostname) ? '' : 'https://4080-email-queue.email-queue.workers.dev';
+  const stream = new EventSource(chatOrigin + '/chat/events');
   stream.onopen = () => {status.textContent = 'live';button.disabled = false;};
   stream.onerror = () => {status.textContent = 'reconnecting';button.disabled = true;};
   stream.onmessage = event => {
@@ -188,7 +184,7 @@
     if(!form.elements.nick.value.trim() || !form.elements.message.value.trim()) return;
     button.disabled = true;
     try {
-      const response = await fetch('/chat/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nick:form.elements.nick.value,message:form.elements.message.value})});
+      const response = await fetch(chatOrigin + '/chat/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nick:form.elements.nick.value,message:form.elements.message.value})});
       if(!response.ok) throw new Error('Send failed');
       form.elements.message.value = '';status.textContent = 'live';
     } catch {status.textContent = 'send failed; retry';}
