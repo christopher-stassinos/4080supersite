@@ -186,7 +186,7 @@
     log.scrollTop = log.scrollHeight;
     setTimeout(() => row.remove(), 300000);
   };
-  poll(); setInterval(poll, 5000);
+  poll(); setInterval(poll, 1000);
   form.onsubmit = async event => {
     event.preventDefault();
     if(!form.elements.nick.value.trim() || !form.elements.message.value.trim()) return;
