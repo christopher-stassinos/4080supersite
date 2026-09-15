@@ -168,7 +168,7 @@
   let seen = 0;
   const poll = async () => {
     try {
-      const response = await fetch(chatOrigin + '/chat/recent');
+      const response = await fetch(chatOrigin + '/chat/recent', {mode:'cors', cache:'no-store', headers:{Accept:'application/json'}});
       if(!response.ok) throw new Error('Chat unavailable');
       const data = await response.json();
       status.textContent = 'live'; button.disabled = false;
