@@ -500,6 +500,7 @@
       <li><a href="#sneakers" data-view-link="sneakers">Sneakers</a></li>
       <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Accessories</a></li>
       <li><a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">Tech</a></li>
+      <li><a href="#direct" data-view-link="direct">Direct Shop</a></li>
     </ul>
 
     <div class="box-title">Where to buy</div>
@@ -682,6 +683,19 @@
   <div class="gallery-thumbs" data-thumbs="sneakers"></div>
 </div>
 
+<div class="gallery-page direct-shop-page" id="view-direct" data-view="direct" hidden>
+  <a class="gallery-back" href="#top" data-view-link="home">&larr; Back to 4080Super</a>
+  <h1>Direct Shop</h1>
+  <p class="gsub">Site-only pieces, sold directly from the archive. No marketplace detour.</p>
+  <div class="direct-shop-intro">
+    <span class="direct-stamp">4080SUPER / DIRECT</span>
+    <h2>Small run. Straight to you.</h2>
+    <p>New pieces will appear here first, with direct checkout and shipping handled by 4080Super.</p>
+    <a class="direct-checkout-link" href="checkout.html">Open checkout &rarr;</a>
+  </div>
+  <div class="direct-empty">The first direct drop is being catalogued now.</div>
+</div>
+
 <div class="site-footer">
   <span>&copy; 4080Super</span>
   <a href="https://www.depop.com/4080super/" target="_blank" rel="noopener">@4080super on Depop</a>
@@ -739,6 +753,7 @@
   });
 
   GALLERIES.tech = window.TECH_ITEMS;
+  GALLERIES.direct = [];
   var techView = document.getElementById('view-sneakers').cloneNode(true);
   techView.id = 'view-tech';
   techView.dataset.view = 'tech';
@@ -914,7 +929,7 @@
     grid.after(empty);
   }
 
-  var VIEWS = ['home', 'streetwear', 'denim', 'sneakers', 'tech', 'accessories'];
+  var VIEWS = ['home', 'streetwear', 'denim', 'sneakers', 'tech', 'accessories', 'direct'];
   function showView(name){
     if(VIEWS.indexOf(name) === -1) name = 'home';
     VIEWS.forEach(function(v){
