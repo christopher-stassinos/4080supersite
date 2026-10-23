@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="utf-8">
 <title>4080Super</title>
-<link rel="stylesheet" href="archive.css?v=hack-planet-1">
+<link rel="stylesheet" href="archive.css?v=pagination-20261023">
 <script src="tech.js?v=inventory-20261023"></script>
 <script src="catalog.js?v=inventory-20261023"></script>
 <script src="listing-label.js"></script>
@@ -576,6 +576,8 @@
       </a>
     </div>
 
+    <nav class="listing-pagination" id="home-pagination" aria-label="Current listings pages" hidden></nav>
+
     <a class="hardware-banner" href="https://www.ebay.com/usr/4080super" target="_blank" rel="noopener">
       <span class="hardware-strip">4080SUPER / HARDWARE DEPT. <span>EBAY LISTINGS &#8599;</span></span>
       <img src="images/tech1.webp" alt="Radeon graphics cards from the archive" loading="lazy">
@@ -864,8 +866,7 @@
   }
   function restartTimer(name){ startTimer(name); }
 
-  function renderHomeSlot(el, idx){
-    var item = ALL_ITEMS[idx % ALL_ITEMS.length];
+  function renderHomeSlot(el, item){
     el.href = item.url;
     var thumb = el.querySelector('.thumb');
     var img = thumb.querySelector('img');
@@ -891,31 +892,82 @@
   function initHomeGrid(){
     var grid = document.getElementById('home-listing-grid');
     var prototype = grid.querySelector('.listing');
+    var pager = document.getElementById('home-pagination');
+    var filteredItems = ALL_ITEMS.slice();
+    var currentPage = 1;
+    var activePageSize = getPageSize();
     grid.replaceChildren();
-    ALL_ITEMS.forEach(function(item, idx){
-      var slot = prototype.cloneNode(true);
-      slot.dataset.slot = idx;
-      grid.appendChild(slot);
-      renderHomeSlot(slot, idx);
-    });
     var searchForm = document.querySelector('.searchwrap form');
     var searchInput = searchForm.querySelector('input');
     var heading = document.querySelector('.main .grid-title');
     heading.setAttribute('role', 'status');
+
+    function getPageSize(){
+      return window.matchMedia('(max-width: 540px)').matches ? 8 : 12;
+    }
+    function createPageButton(label, page, disabled, current){
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = label;
+      button.disabled = disabled;
+      if(current){
+        button.className = 'is-current';
+        button.setAttribute('aria-current', 'page');
+      }
+      button.addEventListener('click', function(){
+        if(button.disabled) return;
+        currentPage = page;
+        renderPage();
+        grid.scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
+      return button;
+    }
+    function renderPager(pageCount){
+      pager.replaceChildren();
+      if(filteredItems.length <= activePageSize){
+        pager.hidden = true;
+        return;
+      }
+      pager.hidden = false;
+      var label = document.createElement('span');
+      label.className = 'pagination-label';
+      label.textContent = 'Pages';
+      pager.appendChild(label);
+      pager.appendChild(createPageButton('Previous', currentPage - 1, currentPage === 1, false));
+      for(var page = 1; page <= pageCount; page++){
+        pager.appendChild(createPageButton(String(page), page, false, page === currentPage));
+      }
+      pager.appendChild(createPageButton('Next', currentPage + 1, currentPage === pageCount, false));
+    }
+    function renderPage(){
+      activePageSize = getPageSize();
+      var pageCount = Math.max(1, Math.ceil(filteredItems.length / activePageSize));
+      currentPage = Math.min(currentPage, pageCount);
+      var start = (currentPage - 1) * activePageSize;
+      grid.replaceChildren();
+      filteredItems.slice(start, start + activePageSize).forEach(function(item, idx){
+        var slot = prototype.cloneNode(true);
+        slot.dataset.slot = start + idx;
+        grid.appendChild(slot);
+        renderHomeSlot(slot, item);
+      });
+      grid.hidden = filteredItems.length === 0;
+      renderPager(pageCount);
+      var empty = document.getElementById('search-empty');
+      if(empty) empty.hidden = filteredItems.length > 0;
+    }
     function filterArchive(){
       if(document.getElementById('view-home').hidden) showView('home');
       if(location.hash) history.replaceState(null, '', location.pathname + location.search);
       var query = searchInput.value.trim().toLowerCase();
       var words = query.split(/\s+/).filter(Boolean);
-      var count = 0;
-      grid.querySelectorAll('.listing').forEach(function(slot, idx){
-        var item = ALL_ITEMS[idx];
+      filteredItems = ALL_ITEMS.filter(function(item){
         var searchable = window.archiveSearchText(item);
-        slot.hidden = !words.every(function(word){ return searchable.includes(word); });
-        if(!slot.hidden) count++;
+        return words.every(function(word){ return searchable.includes(word); });
       });
-      document.getElementById('search-empty').hidden = count > 0;
-      heading.textContent = query ? count + ' result' + (count === 1 ? '' : 's') + ' for "' + searchInput.value.trim() + '"' : 'Current listings';
+      currentPage = 1;
+      heading.textContent = query ? filteredItems.length + ' result' + (filteredItems.length === 1 ? '' : 's') + ' for "' + searchInput.value.trim() + '"' : 'Current listings';
+      renderPage();
     }
     searchInput.addEventListener('input', filterArchive);
     searchForm.addEventListener('submit', function(event){
@@ -927,6 +979,12 @@
     empty.hidden = true;
     empty.textContent = 'No pieces found. Try another search.';
     grid.after(empty);
+    window.addEventListener('resize', function(){
+      var nextPageSize = getPageSize();
+      if(nextPageSize === activePageSize) return;
+      renderPage();
+    });
+    renderPage();
   }
 
   var VIEWS = ['home', 'streetwear', 'denim', 'sneakers', 'tech', 'accessories', 'direct'];
