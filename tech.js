@@ -9,15 +9,6 @@ window.TECH_ITEMS = [
     "sourceImage": "https://i.ebayimg.com/images/g/xRYAAeSwFx9qpfS9/s-l500.webp"
   },
   {
-    "title": "JUHOR 8GB DDR4-3200 Desktop RAM",
-    "price": 41.23,
-    "tag": "tech",
-    "url": "https://www.ebay.com/itm/188922882126",
-    "img": "images/inventory/ebay-188922882126.webp",
-    "searchTags": "memory ram computer hardware PC4-25600 CL16 XMP",
-    "sourceImage": "https://i.ebayimg.com/images/g/JiAAAeSwvoBqpeCZ/s-l500.webp"
-  },
-  {
     "title": "Patriot 8GB DDR4-2666 Laptop RAM",
     "price": 26.38,
     "tag": "tech",
@@ -57,8 +48,8 @@ window.TECH_ITEMS = [
     "title": "Apacer 8GB DDR4-2666 Desktop RAM",
     "price": 28.03,
     "tag": "tech",
-    "url": "https://www.ebay.com/itm/188922882131",
-    "img": "images/inventory/ebay-188922882131.webp",
+    "url": "https://www.ebay.com/itm/840042163588",
+    "img": "images/inventory/ebay-840042163588.webp",
     "searchTags": "memory ram computer hardware PC4-21300 CL19",
     "sourceImage": "https://i.ebayimg.com/images/g/TKgAAeSwZsZqpeDh/s-l500.webp"
   },
@@ -151,6 +142,15 @@ window.TECH_ITEMS = [
     "img": "images/inventory/ebay-188922882129.webp",
     "searchTags": "memory ram computer hardware M378B1G73DB0-CK0",
     "sourceImage": "https://i.ebayimg.com/images/g/ZzcAAeSwuqxqpeHM/s-l500.webp"
+  },
+  {
+    "title": "Goldshell KD Box II Kadena KDA ASIC Miner",
+    "price": 175,
+    "tag": "tech",
+    "url": "https://www.ebay.com/itm/188925506563",
+    "img": "images/inventory/ebay-188925506563.webp",
+    "searchTags": "goldshell kd box ii kadena kda asic miner crypto mining hardware 5th/s ethernet",
+    "sourceImage": "https://i.ebayimg.com/images/g/9MsAAeSw4~Bqprc-/s-l500.webp"
   },
   {
     "title": "AMD Radeon VII 16GB HBM2 Graphics Card",
